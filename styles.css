@@ -113,7 +113,7 @@ ul {
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--copper);
+  color: var(--orange);
   margin-bottom: 1rem;
   position: relative;
   padding-bottom: 0.5rem;
@@ -126,7 +126,7 @@ ul {
   left: 0;
   width: 2rem;
   height: 2px;
-  background: var(--copper);
+  background: var(--orange);
 }
 
 .text-center .section-label::after {
@@ -135,11 +135,11 @@ ul {
 }
 
 .section-label--light {
-  color: var(--copper-light);
+  color: var(--amber);
 }
 
 .section-label--light::after {
-  background: var(--copper-light);
+  background: var(--amber);
 }
 
 .section-heading {
@@ -153,7 +153,7 @@ ul {
 
 .section-heading em {
   font-style: italic;
-  color: var(--copper);
+  color: var(--orange);
 }
 
 .section-heading--light {
@@ -161,7 +161,7 @@ ul {
 }
 
 .section-heading--light em {
-  color: var(--copper-light);
+  color: var(--amber);
 }
 
 .section-subtitle {
@@ -258,7 +258,7 @@ ul {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: var(--teal-deep);
+  background: #2E1A0E;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -334,7 +334,7 @@ ul {
 }
 
 .nav.scrolled {
-  background: rgba(12, 59, 58, 0.97);
+  background: rgba(46, 26, 14, 0.97);
   backdrop-filter: blur(12px);
   padding: 0.8rem 0;
   box-shadow: 0 4px 30px rgba(0,0,0,0.15);
@@ -484,25 +484,34 @@ ul {
   inset: 0;
   background: linear-gradient(
     160deg,
-    var(--teal-deep) 0%,
-    #0E4D4A 25%,
-    #1A6B6A 45%,
-    var(--teal-dark) 65%,
-    #0C3B3A 85%,
-    rgba(196, 90, 45, 0.15) 100%
+    #3D1E0F 0%,
+    #5C2E16 20%,
+    #7A3D1E 40%,
+    #4A2512 60%,
+    #2E1A0E 80%,
+    #1A1008 100%
   );
+}
+
+.hero-bg-gradient::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(232, 145, 46, 0.2) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 70%, rgba(26, 107, 106, 0.15) 0%, transparent 50%);
 }
 
 .hero-bg-pattern {
   position: absolute;
   inset: 0;
   z-index: 1;
-  opacity: 0.08;
+  opacity: 0.1;
   background-image:
-    radial-gradient(ellipse at 20% 50%, var(--orange-bright) 1px, transparent 1px),
-    radial-gradient(ellipse at 80% 50%, var(--jade) 1px, transparent 1px),
-    radial-gradient(ellipse at 60% 80%, var(--amber) 1px, transparent 1px);
-  background-size: 60px 60px, 80px 80px, 100px 100px;
+    radial-gradient(ellipse at 25% 40%, var(--orange-bright) 1px, transparent 1px),
+    radial-gradient(ellipse at 75% 60%, var(--amber) 1px, transparent 1px),
+    radial-gradient(ellipse at 50% 80%, var(--copper-light) 1px, transparent 1px);
+  background-size: 50px 50px, 70px 70px, 90px 90px;
 }
 
 .hero-content {
@@ -525,7 +534,7 @@ ul {
   display: block;
   width: 60px;
   height: 60px;
-  border: 1px solid rgba(184, 115, 51, 0.3);
+  border: 1px solid rgba(232, 145, 46, 0.4);
   transform: rotate(45deg);
 }
 
@@ -535,7 +544,7 @@ ul {
   display: block;
   width: 30px;
   height: 30px;
-  border: 1px solid rgba(0, 168, 107, 0.3);
+  border: 1px solid rgba(217, 138, 53, 0.35);
   transform: rotate(45deg);
   position: absolute;
 }
@@ -682,7 +691,7 @@ ul {
   content: '';
   position: absolute;
   inset: 12px;
-  border: 1px solid rgba(184, 115, 51, 0.2);
+  border: 1px solid rgba(232, 145, 46, 0.25);
 }
 
 .about-image-icon {
@@ -730,10 +739,11 @@ ul {
 .philosophy {
   background: linear-gradient(
     170deg,
-    var(--teal-deep) 0%,
-    #0E4D4A 35%,
-    var(--teal) 60%,
-    #0C3B3A 100%
+    #2E1A0E 0%,
+    #4A2512 30%,
+    #5C2E16 55%,
+    #3D1E0F 80%,
+    #1A1008 100%
   );
   position: relative;
   overflow: hidden;
@@ -777,8 +787,8 @@ ul {
 }
 
 .philosophy-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(232, 145, 46, 0.06);
+  border: 1px solid rgba(232, 145, 46, 0.12);
   padding: 2.5rem;
   text-align: center;
   transition: all 0.5s var(--ease-out);
@@ -799,9 +809,9 @@ ul {
 }
 
 .philosophy-card:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(232, 145, 46, 0.1);
   transform: translateY(-5px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .philosophy-card:hover::before {
@@ -812,7 +822,7 @@ ul {
   width: 64px;
   height: 64px;
   margin: 0 auto 1.5rem;
-  color: var(--copper-light);
+  color: var(--amber);
 }
 
 .philosophy-card-title {
@@ -852,8 +862,8 @@ ul {
 .philosophy-quote-mark {
   font-family: var(--font-display);
   font-size: 4rem;
-  color: var(--copper);
-  opacity: 0.4;
+  color: var(--amber);
+  opacity: 0.5;
   line-height: 1;
 }
 
@@ -908,7 +918,7 @@ ul {
 }
 
 .service-card--featured {
-  background: linear-gradient(160deg, var(--teal-deep), var(--teal) 60%, rgba(196, 90, 45, 0.12) 100%);
+  background: linear-gradient(160deg, #3D1E0F, #5C2E16 50%, #7A3D1E 100%);
   border-color: transparent;
   transform: scale(1.02);
 }
@@ -955,15 +965,15 @@ ul {
   font-family: var(--font-display);
   font-size: 3rem;
   font-weight: 700;
-  color: var(--copper);
-  opacity: 0.3;
+  color: var(--orange);
+  opacity: 0.4;
   line-height: 1;
 }
 
 .service-card-accent {
   width: 30px;
   height: 2px;
-  background: var(--copper);
+  background: var(--orange);
   margin-top: 0.75rem;
 }
 
@@ -983,7 +993,7 @@ ul {
 }
 
 .service-card-text em {
-  color: var(--copper);
+  color: var(--orange);
   font-style: italic;
 }
 
@@ -1007,16 +1017,16 @@ ul {
   transform: translateY(-50%) rotate(45deg);
   width: 6px;
   height: 6px;
-  border: 1px solid var(--copper);
+  border: 1px solid var(--orange);
 }
 
 .service-card--featured .service-card-features li::before {
-  border-color: var(--copper-light);
+  border-color: var(--amber);
 }
 
 /* --- Journey Section --- */
 .journey {
-  background: var(--cream);
+  background: linear-gradient(180deg, var(--cream) 0%, #E8D5C0 100%);
   overflow: hidden;
 }
 
@@ -1057,8 +1067,8 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--offwhite);
-  border: 2px solid var(--copper);
+  background: var(--warm-white);
+  border: 2px solid var(--orange);
   position: relative;
   z-index: 1;
   transition: all 0.4s ease;
@@ -1068,11 +1078,11 @@ ul {
   font-family: var(--font-display);
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--copper);
+  color: var(--orange);
 }
 
 .journey-step:hover .journey-step-marker {
-  background: var(--copper);
+  background: var(--orange);
   transform: rotate(45deg);
 }
 
@@ -1099,10 +1109,11 @@ ul {
 .testimonials {
   background: linear-gradient(
     160deg,
-    var(--teal-deep) 0%,
-    #0E4D4A 40%,
-    var(--teal) 70%,
-    rgba(196, 90, 45, 0.08) 100%
+    #1A1008 0%,
+    #3D1E0F 30%,
+    #5C2E16 55%,
+    #4A2512 75%,
+    #2E1A0E 100%
   );
   position: relative;
   overflow: hidden;
@@ -1132,15 +1143,15 @@ ul {
 }
 
 .testimonial-card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(232, 145, 46, 0.06);
+  border: 1px solid rgba(232, 145, 46, 0.12);
   padding: 2.5rem;
   transition: all 0.5s var(--ease-out);
   backdrop-filter: blur(4px);
 }
 
 .testimonial-card:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(232, 145, 46, 0.12);
   transform: translateY(-5px);
 }
 
@@ -1151,7 +1162,7 @@ ul {
 }
 
 .testimonial-stars span {
-  color: var(--copper-light);
+  color: var(--amber);
   font-size: 1.1rem;
 }
 
@@ -1198,7 +1209,7 @@ ul {
 
 /* --- CTA Section --- */
 .cta-section {
-  background: var(--cream);
+  background: linear-gradient(180deg, #E8D5C0 0%, var(--cream) 100%);
   padding: 5rem 0;
 }
 
@@ -1215,7 +1226,7 @@ ul {
   content: '';
   position: absolute;
   inset: 15px;
-  border: 1px solid rgba(184, 115, 51, 0.15);
+  border: 1px solid rgba(232, 145, 46, 0.2);
   pointer-events: none;
 }
 
@@ -1309,7 +1320,7 @@ ul {
   align-items: center;
   justify-content: center;
   border: 1px solid var(--light-gray);
-  color: var(--copper);
+  color: var(--orange);
   flex-shrink: 0;
 }
 
@@ -1334,7 +1345,7 @@ ul {
 }
 
 .contact-detail a:hover {
-  color: var(--copper);
+  color: var(--orange);
 }
 
 .contact-social {
@@ -1438,8 +1449,7 @@ ul {
 
 /* --- Footer --- */
 .footer {
-  background: var(--teal-deep);
-  background: linear-gradient(180deg, var(--teal-deep) 0%, #091F1F 100%);
+  background: linear-gradient(180deg, #2E1A0E 0%, #1A1008 100%);
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -1465,7 +1475,7 @@ ul {
 .footer-tagline {
   font-family: var(--font-accent);
   font-style: italic;
-  color: var(--copper-light);
+  color: var(--amber);
   font-size: 1rem;
   margin-bottom: 1rem;
 }
@@ -1473,8 +1483,8 @@ ul {
 .footer-ornament-line {
   width: 40px;
   height: 2px;
-  background: var(--copper);
-  opacity: 0.5;
+  background: var(--orange);
+  opacity: 0.6;
 }
 
 .footer-links h4 {
@@ -1610,7 +1620,7 @@ ul {
     width: 80%;
     max-width: 320px;
     height: 100vh;
-    background: var(--teal-deep);
+    background: #2E1A0E;
     flex-direction: column;
     align-items: flex-start;
     padding: 6rem 2rem 2rem;
