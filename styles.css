@@ -912,6 +912,19 @@ ul {
   height: 64px;
   margin: 0 auto 1.5rem;
   color: var(--amber);
+  position: relative;
+  transition: all 0.5s var(--ease-out);
+  filter: drop-shadow(0 0 8px rgba(220, 160, 85, 0.3));
+}
+
+.philosophy-card-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.philosophy-card:hover .philosophy-card-icon {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 16px rgba(220, 160, 85, 0.6));
 }
 
 .philosophy-quote {
@@ -1041,6 +1054,44 @@ ul {
   padding: 0.4rem 2.5rem;
   transform: rotate(45deg);
   transform-origin: center;
+}
+
+/* Service card icons */
+.service-card-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 1.5rem;
+  color: var(--orange);
+  padding: 10px;
+  border: 1px solid rgba(198, 125, 74, 0.25);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(198, 125, 74, 0.06), rgba(220, 160, 85, 0.1));
+  transition: all 0.5s var(--ease-out);
+  position: relative;
+}
+
+.service-card-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.service-card:hover .service-card-icon {
+  background: linear-gradient(135deg, rgba(198, 125, 74, 0.15), rgba(220, 160, 85, 0.2));
+  border-color: var(--orange);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(198, 125, 74, 0.2);
+}
+
+.service-card--featured .service-card-icon {
+  color: var(--amber);
+  border-color: rgba(220, 160, 85, 0.3);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
+}
+
+.service-card--featured:hover .service-card-icon {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
+  border-color: var(--amber);
+  box-shadow: 0 8px 24px rgba(220, 160, 85, 0.3);
 }
 
 .service-card-header {
@@ -1187,12 +1238,33 @@ ul {
   transform: rotate(-45deg);
 }
 
+.journey-step-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.journey-step-icon {
+  width: 28px;
+  height: 28px;
+  color: var(--orange);
+  flex-shrink: 0;
+  transition: all 0.4s var(--ease-out);
+  filter: drop-shadow(0 0 4px rgba(198, 125, 74, 0.2));
+}
+
+.journey-step:hover .journey-step-icon {
+  color: var(--orange-bright);
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 10px rgba(232, 146, 62, 0.5));
+}
+
 .journey-step-content h3 {
   font-family: var(--font-display);
   font-size: 1.4rem;
   color: var(--dark-brown);
-  margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
 }
 
 .journey-step-content p {
@@ -1642,6 +1714,202 @@ ul {
   font-family: var(--font-accent);
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.35);
+}
+
+
+/* ============================================================
+   FLOATING PARTICLES — Ambient dots in dark sections
+   ============================================================ */
+.philosophy-particles,
+.testimonials-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--amber);
+  opacity: 0;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.particle--1 {
+  width: 4px; height: 4px;
+  top: 15%; left: 10%;
+  animation: particleDrift1 7s infinite;
+}
+.particle--2 {
+  width: 6px; height: 6px;
+  top: 60%; left: 85%;
+  animation: particleDrift2 9s 1s infinite;
+}
+.particle--3 {
+  width: 3px; height: 3px;
+  top: 30%; left: 70%;
+  animation: particleDrift3 8s 2s infinite;
+}
+.particle--4 {
+  width: 5px; height: 5px;
+  top: 75%; left: 20%;
+  animation: particleDrift1 10s 0.5s infinite;
+}
+.particle--5 {
+  width: 3px; height: 3px;
+  top: 45%; left: 50%;
+  animation: particleDrift2 11s 3s infinite;
+}
+.particle--6 {
+  width: 4px; height: 4px;
+  top: 85%; left: 65%;
+  animation: particleDrift3 8s 1.5s infinite;
+}
+
+@keyframes particleDrift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0; }
+  20% { opacity: 0.4; }
+  50% { transform: translate(30px, -40px) scale(1.5); opacity: 0.25; }
+  80% { opacity: 0.4; }
+}
+@keyframes particleDrift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0; }
+  20% { opacity: 0.35; }
+  50% { transform: translate(-25px, 35px) scale(1.3); opacity: 0.2; }
+  80% { opacity: 0.35; }
+}
+@keyframes particleDrift3 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0; }
+  25% { opacity: 0.3; }
+  50% { transform: translate(20px, 30px) scale(1.4); opacity: 0.15; }
+  75% { opacity: 0.3; }
+}
+
+
+/* ============================================================
+   ANIMATED GLOW & SHIMMER EFFECTS
+   ============================================================ */
+
+/* Glowing border animation on philosophy cards */
+.philosophy-card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 11px;
+  background: linear-gradient(
+    135deg,
+    transparent 30%,
+    rgba(220, 160, 85, 0.3) 50%,
+    transparent 70%
+  );
+  background-size: 300% 300%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  animation: shimmerBorder 4s ease-in-out infinite;
+}
+
+.philosophy-card:hover::after {
+  opacity: 1;
+}
+
+@keyframes shimmerBorder {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* Pulsing glow on CTA button */
+.cta-card .btn--primary {
+  animation: btnPulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes btnPulseGlow {
+  0%, 100% { box-shadow: 0 4px 15px rgba(212, 120, 58, 0.3); }
+  50% { box-shadow: 0 6px 30px rgba(212, 120, 58, 0.55), 0 0 60px rgba(212, 120, 58, 0.15); }
+}
+
+/* Animated gradient line on journey */
+.journey-line {
+  background: linear-gradient(to bottom, var(--orange-bright), var(--amber), var(--copper-light), var(--copper));
+  background-size: 100% 200%;
+  animation: journeyLineFlow 4s ease-in-out infinite;
+}
+
+@keyframes journeyLineFlow {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 0% 100%; }
+}
+
+/* Glow ring on journey markers on hover */
+.journey-step:hover .journey-step-marker {
+  box-shadow: 0 0 0 6px rgba(212, 120, 58, 0.15), 0 0 20px rgba(212, 120, 58, 0.2);
+}
+
+/* Subtle glow on testimonial cards hover */
+.testimonial-card:hover {
+  border-color: rgba(220, 160, 85, 0.25);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2), 0 0 30px rgba(220, 160, 85, 0.08);
+}
+
+/* Animated amber line under section labels */
+.section-label::after {
+  transition: width 0.6s var(--ease-out), box-shadow 0.6s ease;
+}
+
+.section-label:hover::after {
+  width: 4rem;
+  box-shadow: 0 0 10px rgba(212, 120, 58, 0.4);
+}
+
+/* Glowing star effect on testimonials */
+.testimonial-stars span {
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 3px rgba(220, 160, 85, 0.4));
+}
+
+.testimonial-card:hover .testimonial-stars span {
+  filter: drop-shadow(0 0 8px rgba(220, 160, 85, 0.8));
+}
+
+/* Animated accent line on about section */
+.about-divider {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-divider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  animation: shimmerLine 3s ease-in-out infinite;
+}
+
+@keyframes shimmerLine {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* Glow on hero arch border */
+.hero-arch {
+  animation: archGlow 5s ease-in-out infinite;
+}
+
+@keyframes archGlow {
+  0%, 100% { box-shadow: inset 0 0 30px rgba(220, 160, 85, 0.05), 0 0 40px rgba(220, 160, 85, 0.05); }
+  50% { box-shadow: inset 0 0 50px rgba(220, 160, 85, 0.1), 0 0 60px rgba(220, 160, 85, 0.1); }
+}
+
+/* Nav logo glow on scroll */
+.nav.scrolled .nav-logo-mark {
+  box-shadow: 0 0 12px rgba(198, 125, 74, 0.3);
 }
 
 
