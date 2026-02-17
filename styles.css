@@ -6,26 +6,31 @@
 
 /* --- CSS Custom Properties --- */
 :root {
-  /* Primary Palette */
-  --copper:        #B87333;
-  --copper-light:  #D4956A;
-  --copper-dark:   #8C5A28;
-  --copper-glow:   rgba(184, 115, 51, 0.25);
+  /* Primary Palette — Orange-Forward */
+  --copper:        #C45A2D;
+  --copper-light:  #E8912E;
+  --copper-dark:   #A0482A;
+  --copper-glow:   rgba(196, 90, 45, 0.3);
 
-  --jade:          #00A86B;
-  --jade-light:    #3DBF8E;
-  --jade-dark:     #007A4D;
-  --jade-muted:    #4A9E7E;
+  --orange:        #D4682E;
+  --orange-bright: #E8912E;
+  --orange-burnt:  #B8512A;
+  --amber:         #D98A35;
 
-  --teal:          #367588;
-  --teal-light:    #5A9FB5;
-  --teal-dark:     #1E4D5E;
-  --teal-deep:     #1B3A4B;
+  --jade:          #2A9D8F;
+  --jade-light:    #4DBFB5;
+  --jade-dark:     #1A7A6E;
+  --jade-muted:    #3AAFA9;
 
-  --offwhite:      #FAF6F1;
-  --cream:         #F5EDE3;
-  --warm-white:    #FFF9F4;
-  --parchment:     #EDE4D8;
+  --teal:          #1A6B6A;
+  --teal-light:    #2A8B85;
+  --teal-dark:     #0E4D5C;
+  --teal-deep:     #0C3B3A;
+
+  --offwhite:      #F5EDE3;
+  --cream:         #EDE4D8;
+  --warm-white:    #FAF4EC;
+  --parchment:     #E0D5C7;
 
   /* Neutrals */
   --charcoal:      #2C2C2C;
@@ -329,7 +334,7 @@ ul {
 }
 
 .nav.scrolled {
-  background: rgba(27, 58, 75, 0.97);
+  background: rgba(12, 59, 58, 0.97);
   backdrop-filter: blur(12px);
   padding: 0.8rem 0;
   box-shadow: 0 4px 30px rgba(0,0,0,0.15);
@@ -480,10 +485,11 @@ ul {
   background: linear-gradient(
     160deg,
     var(--teal-deep) 0%,
-    #1B4040 30%,
-    #2A4A3A 50%,
-    var(--teal-dark) 70%,
-    #1B3A4B 100%
+    #0E4D4A 25%,
+    #1A6B6A 45%,
+    var(--teal-dark) 65%,
+    #0C3B3A 85%,
+    rgba(196, 90, 45, 0.15) 100%
   );
 }
 
@@ -491,11 +497,12 @@ ul {
   position: absolute;
   inset: 0;
   z-index: 1;
-  opacity: 0.06;
+  opacity: 0.08;
   background-image:
-    radial-gradient(ellipse at 20% 50%, var(--copper) 1px, transparent 1px),
-    radial-gradient(ellipse at 80% 50%, var(--jade) 1px, transparent 1px);
-  background-size: 60px 60px, 80px 80px;
+    radial-gradient(ellipse at 20% 50%, var(--orange-bright) 1px, transparent 1px),
+    radial-gradient(ellipse at 80% 50%, var(--jade) 1px, transparent 1px),
+    radial-gradient(ellipse at 60% 80%, var(--amber) 1px, transparent 1px);
+  background-size: 60px 60px, 80px 80px, 100px 100px;
 }
 
 .hero-content {
@@ -564,8 +571,8 @@ ul {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--copper);
-  opacity: 0.5;
+  background: var(--orange-bright);
+  opacity: 0.6;
 }
 
 .hero-divider {
@@ -579,17 +586,17 @@ ul {
 .hero-divider-line {
   width: 60px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--copper-light));
+  background: linear-gradient(90deg, transparent, var(--amber));
 }
 
 .hero-divider-line:last-child {
-  background: linear-gradient(90deg, var(--copper-light), transparent);
+  background: linear-gradient(90deg, var(--amber), transparent);
 }
 
 .hero-divider-diamond {
   width: 10px;
   height: 10px;
-  background: var(--copper);
+  background: var(--orange-bright);
   transform: rotate(45deg);
   flex-shrink: 0;
 }
@@ -633,7 +640,7 @@ ul {
 .hero-scroll-line {
   width: 1px;
   height: 40px;
-  background: linear-gradient(to bottom, var(--copper-light), transparent);
+  background: linear-gradient(to bottom, var(--orange-bright), transparent);
   animation: scrollPulse 2s ease-in-out infinite;
 }
 
@@ -700,15 +707,15 @@ ul {
   right: -20px;
   width: 60%;
   height: 60%;
-  border: 2px solid var(--copper);
-  opacity: 0.3;
+  border: 2px solid var(--orange);
+  opacity: 0.35;
   z-index: -1;
 }
 
 .about-divider {
   width: 60px;
   height: 2px;
-  background: linear-gradient(90deg, var(--copper), var(--jade-muted));
+  background: linear-gradient(90deg, var(--orange-bright), var(--jade-muted));
   margin: 1.5rem 0;
 }
 
@@ -724,8 +731,9 @@ ul {
   background: linear-gradient(
     170deg,
     var(--teal-deep) 0%,
-    var(--teal-dark) 40%,
-    #1B4040 100%
+    #0E4D4A 35%,
+    var(--teal) 60%,
+    #0C3B3A 100%
   );
   position: relative;
   overflow: hidden;
@@ -739,21 +747,21 @@ ul {
 .philosophy-pattern {
   position: absolute;
   inset: 0;
-  opacity: 0.04;
+  opacity: 0.05;
   background-image:
     repeating-linear-gradient(
       0deg,
       transparent,
       transparent 40px,
-      rgba(184, 115, 51, 0.5) 40px,
-      rgba(184, 115, 51, 0.5) 41px
+      rgba(232, 145, 46, 0.5) 40px,
+      rgba(232, 145, 46, 0.5) 41px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 40px,
-      rgba(184, 115, 51, 0.5) 40px,
-      rgba(184, 115, 51, 0.5) 41px
+      rgba(232, 145, 46, 0.5) 40px,
+      rgba(232, 145, 46, 0.5) 41px
     );
 }
 
@@ -885,7 +893,7 @@ ul {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--copper), var(--jade-muted));
+  background: linear-gradient(90deg, var(--orange-burnt), var(--orange-bright), var(--jade-muted));
   transform: scaleX(0);
   transition: transform 0.4s var(--ease-out);
 }
@@ -900,7 +908,7 @@ ul {
 }
 
 .service-card--featured {
-  background: linear-gradient(160deg, var(--teal-deep), var(--teal-dark));
+  background: linear-gradient(160deg, var(--teal-deep), var(--teal) 60%, rgba(196, 90, 45, 0.12) 100%);
   border-color: transparent;
   transform: scale(1.02);
 }
@@ -1028,7 +1036,7 @@ ul {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, var(--copper), var(--jade-muted), var(--teal));
+  background: linear-gradient(to bottom, var(--orange-bright), var(--amber), var(--jade-muted), var(--teal));
 }
 
 .journey-step {
@@ -1091,9 +1099,10 @@ ul {
 .testimonials {
   background: linear-gradient(
     160deg,
-    #1B3A4B 0%,
-    var(--teal-dark) 50%,
-    #1B4040 100%
+    var(--teal-deep) 0%,
+    #0E4D4A 40%,
+    var(--teal) 70%,
+    rgba(196, 90, 45, 0.08) 100%
   );
   position: relative;
   overflow: hidden;
@@ -1107,8 +1116,8 @@ ul {
 .testimonials-pattern {
   position: absolute;
   inset: 0;
-  opacity: 0.03;
-  background-image: radial-gradient(circle at 2px 2px, var(--copper-light) 1px, transparent 1px);
+  opacity: 0.05;
+  background-image: radial-gradient(circle at 2px 2px, var(--orange-bright) 1px, transparent 1px);
   background-size: 30px 30px;
 }
 
@@ -1167,7 +1176,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--copper);
+  background: var(--orange);
   color: var(--offwhite);
   font-family: var(--font-display);
   font-size: 1.1rem;
@@ -1350,8 +1359,8 @@ ul {
 }
 
 .contact-social-link:hover {
-  background: var(--copper);
-  border-color: var(--copper);
+  background: var(--orange);
+  border-color: var(--orange);
   color: var(--offwhite);
 }
 
@@ -1430,6 +1439,7 @@ ul {
 /* --- Footer --- */
 .footer {
   background: var(--teal-deep);
+  background: linear-gradient(180deg, var(--teal-deep) 0%, #091F1F 100%);
   color: rgba(255, 255, 255, 0.7);
 }
 
