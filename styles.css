@@ -1,38 +1,42 @@
 /* ============================================================
    MALINDA PERRY CONSULTING
-   Strengths Coaching — Old Italy Aesthetic
-   Color Palette: Copper, Jade, Teal, Off-White
+   Strengths Coaching — Old Italy / Tuscan Villa Aesthetic
+   Color Identity: ORANGE — Warm Terracotta, Burnt Orange
    ============================================================ */
 
 /* --- CSS Custom Properties --- */
 :root {
-  /* Primary Palette — Soft Tuscan */
-  --copper:        #B8785C;
-  --copper-light:  #C99A7E;
-  --copper-dark:   #9C6347;
-  --copper-glow:   rgba(184, 120, 92, 0.25);
+  /* Primary Palette — Warm Terracotta / Copper */
+  --copper:        #C67D4A;
+  --copper-light:  #D4956E;
+  --copper-dark:   #A86535;
+  --copper-glow:   rgba(198, 125, 74, 0.3);
 
-  --orange:        #C4876A;
-  --orange-bright: #D4956E;
-  --orange-burnt:  #A8705A;
-  --amber:         #CDA06B;
+  /* THE Main Color — Orange */
+  --orange:        #D4783A;
+  --orange-bright: #E8923E;
+  --orange-burnt:  #B86830;
+  --amber:         #DCA055;
 
-  --jade:          #7DA88E;
-  --jade-light:    #9ABFA8;
-  --jade-dark:     #5E8A6F;
-  --jade-muted:    #8BB89B;
+  /* Accent — Muted Sage */
+  --jade:          #5E8E78;
+  --jade-light:    #7BAA94;
+  --jade-dark:     #4A7562;
+  --jade-muted:    #6B9E86;
 
-  --teal:          #5E8E8A;
-  --teal-light:    #7BA8A4;
-  --teal-dark:     #4A7572;
-  --teal-deep:     #3A5F5C;
+  /* Sparingly — Teal */
+  --teal:          #5A8A86;
+  --teal-light:    #78A8A4;
+  --teal-dark:     #3D6B68;
+  --teal-deep:     #2D4F4D;
 
-  --offwhite:      #FAF6F0;
-  --cream:         #F3ECE2;
-  --warm-white:    #FDF9F4;
-  --parchment:     #EBE2D6;
+  /* Warm Neutrals */
+  --offwhite:      #FBF6EF;
+  --cream:         #F4EBE0;
+  --warm-white:    #FDF8F2;
+  --parchment:     #EBE0D2;
 
-  /* Neutrals */
+  /* Dark Neutrals */
   --charcoal:      #3A3632;
   --dark-brown:    #4A3F36;
   --warm-gray:     #938A80;
@@ -183,7 +187,7 @@ ul {
   text-transform: uppercase;
   padding: 1rem 2.5rem;
   border: 2px solid transparent;
-  border-radius: 0;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.4s var(--ease-out);
   position: relative;
@@ -206,14 +210,14 @@ ul {
 }
 
 .btn--primary {
-  background: var(--copper);
+  background: var(--orange);
   color: var(--offwhite);
-  border-color: var(--copper);
+  border-color: var(--orange);
 }
 
 .btn--primary:hover {
-  background: var(--copper-dark);
-  border-color: var(--copper-dark);
+  background: var(--orange-burnt);
+  border-color: var(--orange-burnt);
   transform: translateY(-2px);
   box-shadow: 0 8px 30px var(--copper-glow);
 }
@@ -232,12 +236,12 @@ ul {
 
 .btn--outline {
   background: transparent;
-  color: var(--copper);
-  border-color: var(--copper);
+  color: var(--orange);
+  border-color: var(--orange);
 }
 
 .btn--outline:hover {
-  background: var(--copper);
+  background: var(--orange);
   color: var(--offwhite);
   transform: translateY(-2px);
   box-shadow: 0 8px 30px var(--copper-glow);
@@ -253,76 +257,60 @@ ul {
   font-size: 1.05rem;
 }
 
-/* --- Preloader --- */
-.preloader {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: #3A4A3E;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
-}
 
-.preloader.hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.preloader-inner {
-  text-align: center;
-}
-
-.preloader-ornament {
-  width: 50px;
-  height: 50px;
-  border: 2px solid var(--copper);
-  border-radius: 50%;
-  margin: 0 auto 1.5rem;
+/* ============================================================
+   SECTION WAVE DIVIDERS
+   SVG curved transitions between sections
+   ============================================================ */
+.section-wave {
   position: relative;
-  animation: preloaderSpin 1.5s linear infinite;
+  width: 100%;
+  height: 80px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 2;
 }
 
-.preloader-ornament::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 12px;
-  height: 12px;
-  background: var(--copper);
-  border-radius: 50%;
+.section-wave svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
-.preloader-ornament::after {
-  content: '';
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 8px;
-  height: 8px;
-  background: var(--jade);
-  border-radius: 50%;
+/* Cream wave — transitions INTO cream/offwhite sections */
+.section-wave--cream {
+  color: var(--offwhite);
+  background: transparent;
 }
 
-@keyframes preloaderSpin {
-  to { transform: rotate(360deg); }
+/* Orange wave — transitions INTO the philosophy section (deep burnt orange) */
+.section-wave--orange {
+  color: #6B3420;
+  background: var(--offwhite);
 }
 
-.preloader-text {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  color: var(--copper-light);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  opacity: 0.8;
+/* Dark orange wave — transitions INTO the testimonials section */
+.section-wave--orange-dark {
+  color: #4A2818;
+  background: var(--cream);
 }
 
-/* --- Navigation --- */
+/* Flipped wave — used after dark sections transitioning back to light */
+.section-wave--flip {
+  transform: scaleY(-1);
+}
+
+/* When flip comes after philosophy, it sits on the orange bg */
+.section-wave--flip.section-wave--cream {
+  background: transparent;
+}
+
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
 .nav {
   position: fixed;
   top: 0;
@@ -334,10 +322,10 @@ ul {
 }
 
 .nav.scrolled {
-  background: rgba(52, 66, 56, 0.97);
+  background: rgba(58, 36, 24, 0.97);
   backdrop-filter: blur(12px);
   padding: 0.8rem 0;
-  box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.2);
 }
 
 .nav-container {
@@ -366,6 +354,7 @@ ul {
   align-items: center;
   justify-content: center;
   border: 2px solid var(--copper);
+  border-radius: 8px;
   transition: all 0.3s ease;
 }
 
@@ -405,8 +394,8 @@ ul {
   bottom: -2px;
   left: 0;
   width: 0;
-  height: 1px;
-  background: var(--copper);
+  height: 2px;
+  background: var(--orange);
   transition: width 0.3s var(--ease-out);
 }
 
@@ -422,6 +411,7 @@ ul {
   color: var(--copper-light);
   border: 1px solid var(--copper);
   padding: 0.5rem 1.2rem;
+  border-radius: 6px;
 }
 
 .nav-link--cta::after {
@@ -429,7 +419,8 @@ ul {
 }
 
 .nav-link--cta:hover {
-  background: var(--copper);
+  background: var(--orange);
+  border-color: var(--orange);
   color: var(--offwhite);
 }
 
@@ -463,7 +454,11 @@ ul {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* --- Hero Section --- */
+
+/* ============================================================
+   HERO SECTION — Rich Terracotta / Orange Gradient
+   With arch-shaped frame and floating decorative elements
+   ============================================================ */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -479,41 +474,103 @@ ul {
   z-index: 0;
 }
 
+/* Rich terracotta/orange hero gradient — THE identity */
 .hero-bg-gradient {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     160deg,
-    #344238 0%,
-    #3E5043 20%,
-    #4A5E4E 40%,
-    #3A4A3E 60%,
-    #2E3E32 80%,
-    #253028 100%
+    #7A3D1E 0%,
+    #9B5228 20%,
+    #C67D4A 45%,
+    #B86830 65%,
+    #A86535 80%,
+    #7A3D1E 100%
   );
 }
 
+/* Warm radial overlays for depth — like light through terracotta arches */
 .hero-bg-gradient::after {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 70% 30%, rgba(196, 160, 107, 0.15) 0%, transparent 60%),
-    radial-gradient(ellipse at 20% 70%, rgba(125, 168, 142, 0.1) 0%, transparent 50%);
+    radial-gradient(ellipse at 70% 25%, rgba(220, 160, 85, 0.25) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 75%, rgba(184, 104, 48, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(255, 220, 180, 0.08) 0%, transparent 70%);
 }
 
+/* Subtle dot pattern — like aged terracotta texture */
 .hero-bg-pattern {
   position: absolute;
   inset: 0;
   z-index: 1;
-  opacity: 0.07;
+  opacity: 0.06;
   background-image:
-    radial-gradient(ellipse at 25% 40%, var(--copper-light) 1px, transparent 1px),
-    radial-gradient(ellipse at 75% 60%, var(--jade-muted) 1px, transparent 1px),
-    radial-gradient(ellipse at 50% 80%, var(--amber) 1px, transparent 1px);
+    radial-gradient(ellipse at 25% 40%, var(--amber) 1px, transparent 1px),
+    radial-gradient(ellipse at 75% 60%, var(--copper-light) 1px, transparent 1px),
+    radial-gradient(ellipse at 50% 80%, var(--orange-bright) 1px, transparent 1px);
   background-size: 50px 50px, 70px 70px, 90px 90px;
 }
 
+/* --- Floating Decorative Elements --- */
+.hero-float {
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.hero-float--1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: -5%;
+  background: radial-gradient(circle, var(--amber) 0%, transparent 70%);
+  animation: heroFloat1 8s ease-in-out infinite;
+}
+
+.hero-float--2 {
+  width: 200px;
+  height: 200px;
+  bottom: 15%;
+  right: 5%;
+  background: radial-gradient(circle, var(--copper-light) 0%, transparent 70%);
+  animation: heroFloat2 10s ease-in-out infinite;
+  /* Diamond shape */
+  border-radius: 0;
+  transform: rotate(45deg);
+}
+
+.hero-float--3 {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  left: 8%;
+  background: radial-gradient(circle, var(--orange-bright) 0%, transparent 70%);
+  animation: heroFloat3 12s ease-in-out infinite;
+}
+
+@keyframes heroFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(20px, -15px) scale(1.05); }
+  50% { transform: translate(10px, 20px) scale(0.95); }
+  75% { transform: translate(-15px, 10px) scale(1.03); }
+}
+
+@keyframes heroFloat2 {
+  0%, 100% { transform: rotate(45deg) translate(0, 0); }
+  33% { transform: rotate(45deg) translate(-15px, 20px); }
+  66% { transform: rotate(45deg) translate(20px, -10px); }
+}
+
+@keyframes heroFloat3 {
+  0%, 100% { transform: translate(0, 0); opacity: 0.12; }
+  50% { transform: translate(15px, -20px); opacity: 0.18; }
+}
+
+/* --- Hero Content --- */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -522,31 +579,28 @@ ul {
   max-width: 900px;
 }
 
-.hero-ornament {
-  display: flex;
-  justify-content: center;
-  margin: 1rem 0;
+/* --- Arch-Shaped Frame --- */
+.hero-arch {
+  border-radius: 50% 50% 0 0 / 20% 20% 0 0;
+  border: 1px solid rgba(255, 220, 180, 0.2);
+  padding: 4rem 3rem 3rem;
+  position: relative;
+  background: rgba(122, 61, 30, 0.15);
+  backdrop-filter: blur(2px);
 }
 
-.hero-ornament--top::before,
-.hero-ornament--bottom::before {
+.hero-arch::before {
   content: '';
-  display: block;
-  width: 60px;
-  height: 60px;
-  border: 1px solid rgba(201, 154, 126, 0.3);
-  transform: rotate(45deg);
-}
-
-.hero-ornament--top::after,
-.hero-ornament--bottom::after {
-  content: '';
-  display: block;
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgba(139, 184, 155, 0.25);
-  transform: rotate(45deg);
   position: absolute;
+  inset: 8px;
+  border-radius: 50% 50% 0 0 / 20% 20% 0 0;
+  border: 1px solid rgba(255, 220, 180, 0.1);
+  pointer-events: none;
+}
+
+.hero-arch-inner {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-preheading {
@@ -554,7 +608,7 @@ ul {
   font-size: 1.1rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--copper-light);
+  color: var(--amber);
   margin-bottom: 1.5rem;
 }
 
@@ -569,7 +623,7 @@ ul {
 
 .hero-heading em {
   font-style: italic;
-  color: var(--copper-light);
+  color: var(--amber);
   position: relative;
 }
 
@@ -582,6 +636,7 @@ ul {
   height: 3px;
   background: var(--orange-bright);
   opacity: 0.6;
+  border-radius: 2px;
 }
 
 .hero-divider {
@@ -602,18 +657,17 @@ ul {
   background: linear-gradient(90deg, var(--amber), transparent);
 }
 
-.hero-divider-diamond {
-  width: 10px;
-  height: 10px;
-  background: var(--orange-bright);
-  transform: rotate(45deg);
-  flex-shrink: 0;
+.hero-divider-icon {
+  color: var(--orange-bright);
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0.8;
 }
 
 .hero-subheading {
   font-family: var(--font-body);
   font-size: clamp(1rem, 2vw, 1.2rem);
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.78);
   line-height: 1.8;
   max-width: 650px;
   margin: 0 auto 2.5rem;
@@ -649,7 +703,7 @@ ul {
 .hero-scroll-line {
   width: 1px;
   height: 40px;
-  background: linear-gradient(to bottom, var(--orange-bright), transparent);
+  background: linear-gradient(to bottom, var(--amber), transparent);
   animation: scrollPulse 2s ease-in-out infinite;
 }
 
@@ -658,7 +712,10 @@ ul {
   50% { opacity: 0.3; transform: scaleY(0.6); }
 }
 
-/* --- About Section --- */
+
+/* ============================================================
+   ABOUT SECTION — Cream/Off-White Background
+   ============================================================ */
 .about {
   background: var(--offwhite);
   overflow: hidden;
@@ -683,6 +740,7 @@ ul {
   align-items: center;
   justify-content: center;
   border: 1px solid var(--light-gray);
+  border-radius: 12px;
   position: relative;
   overflow: hidden;
 }
@@ -691,7 +749,8 @@ ul {
   content: '';
   position: absolute;
   inset: 12px;
-  border: 1px solid rgba(184, 120, 92, 0.18);
+  border: 1px solid rgba(198, 125, 74, 0.18);
+  border-radius: 8px;
 }
 
 .about-image-icon {
@@ -717,15 +776,30 @@ ul {
   width: 60%;
   height: 60%;
   border: 2px solid var(--orange);
-  opacity: 0.35;
+  border-radius: 12px;
+  opacity: 0.3;
   z-index: -1;
+}
+
+/* Decorative dot pattern — like mosaic tile texture */
+.about-image-dots {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 80px;
+  height: 80px;
+  z-index: -1;
+  opacity: 0.4;
+  background-image: radial-gradient(circle, var(--copper) 2px, transparent 2px);
+  background-size: 12px 12px;
 }
 
 .about-divider {
   width: 60px;
   height: 2px;
-  background: linear-gradient(90deg, var(--orange-bright), var(--jade-muted));
+  background: linear-gradient(90deg, var(--orange), var(--amber));
   margin: 1.5rem 0;
+  border-radius: 1px;
 }
 
 .about-text {
@@ -735,15 +809,19 @@ ul {
   line-height: 1.85;
 }
 
-/* --- Philosophy Section --- */
+
+/* ============================================================
+   PHILOSOPHY SECTION — Deep Burnt Orange / Terracotta Interior
+   Like being inside a beautiful terracotta building
+   ============================================================ */
 .philosophy {
   background: linear-gradient(
     170deg,
-    #2E3E32 0%,
-    #3A4A3E 30%,
-    #455548 55%,
-    #344238 80%,
-    #253028 100%
+    #6B3420 0%,
+    #7A3D28 30%,
+    #8B4528 55%,
+    #7A3D28 75%,
+    #6B3420 100%
   );
   position: relative;
   overflow: hidden;
@@ -754,24 +832,25 @@ ul {
   inset: 0;
 }
 
+/* Grid pattern — like terracotta tile lines */
 .philosophy-pattern {
   position: absolute;
   inset: 0;
-  opacity: 0.04;
+  opacity: 0.05;
   background-image:
     repeating-linear-gradient(
       0deg,
       transparent,
       transparent 40px,
-      rgba(201, 154, 126, 0.4) 40px,
-      rgba(201, 154, 126, 0.4) 41px
+      rgba(255, 220, 180, 0.4) 40px,
+      rgba(255, 220, 180, 0.4) 41px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 40px,
-      rgba(201, 154, 126, 0.4) 40px,
-      rgba(201, 154, 126, 0.4) 41px
+      rgba(255, 220, 180, 0.4) 40px,
+      rgba(255, 220, 180, 0.4) 41px
     );
 }
 
@@ -787,12 +866,13 @@ ul {
 }
 
 .philosophy-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2.5rem;
   text-align: center;
   transition: all 0.5s var(--ease-out);
   position: relative;
+  border-radius: 10px;
   backdrop-filter: blur(4px);
 }
 
@@ -804,25 +884,31 @@ ul {
   transform: translateX(-50%);
   width: 40px;
   height: 3px;
-  background: var(--copper);
+  background: var(--amber);
+  border-radius: 2px;
   transition: width 0.4s var(--ease-out);
 }
 
 .philosophy-card:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.1);
   transform: translateY(-5px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
 }
 
 .philosophy-card:hover::before {
   width: 80px;
 }
 
-.philosophy-card-icon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 1.5rem;
+/* Roman numeral decoration — large, semi-transparent */
+.philosophy-card-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
   color: var(--amber);
+  opacity: 0.35;
+  line-height: 1;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
 }
 
 .philosophy-card-title {
@@ -832,10 +918,26 @@ ul {
   margin-bottom: 1rem;
 }
 
+/* Decorative line — short 40px ornamental line */
+.philosophy-card-line {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--amber), transparent);
+  margin: 0 auto 1.2rem;
+  border-radius: 1px;
+}
+
 .philosophy-card-text {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.8;
+}
+
+.philosophy-card-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  color: var(--amber);
 }
 
 .philosophy-quote {
@@ -871,7 +973,10 @@ ul {
   text-align: right;
 }
 
-/* --- Services Section --- */
+
+/* ============================================================
+   SERVICES SECTION — Cream/Off-White Background
+   ============================================================ */
 .services {
   background: var(--offwhite);
 }
@@ -894,6 +999,7 @@ ul {
   transition: all 0.5s var(--ease-out);
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .service-card::after {
@@ -903,9 +1009,10 @@ ul {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--copper), var(--amber), var(--jade-muted));
+  background: linear-gradient(90deg, var(--orange), var(--amber), var(--copper-light));
   transform: scaleX(0);
   transition: transform 0.4s var(--ease-out);
+  border-radius: 0 0 10px 10px;
 }
 
 .service-card:hover {
@@ -917,14 +1024,16 @@ ul {
   transform: scaleX(1);
 }
 
+/* Featured card — warm terracotta gradient, NOT green */
 .service-card--featured {
-  background: linear-gradient(160deg, #344238, #455548 50%, #4A5E4E 100%);
+  background: linear-gradient(160deg, #7A3D1E, #9B5228 50%, #A86535 100%);
   border-color: transparent;
   transform: scale(1.02);
 }
 
 .service-card--featured:hover {
   transform: scale(1.02) translateY(-8px);
+  box-shadow: 0 20px 60px rgba(122, 61, 30, 0.3);
 }
 
 .service-card--featured .service-card-title,
@@ -934,18 +1043,22 @@ ul {
 }
 
 .service-card--featured .service-card-number {
-  color: var(--copper-light);
+  color: var(--amber);
+}
+
+.service-card--featured .service-card-accent {
+  background: var(--amber);
 }
 
 .service-card--featured::after {
-  background: var(--copper);
+  background: var(--amber);
 }
 
 .service-card-badge {
   position: absolute;
   top: 1.5rem;
   right: -2rem;
-  background: var(--copper);
+  background: var(--orange-bright);
   color: var(--offwhite);
   font-family: var(--font-accent);
   font-size: 0.75rem;
@@ -975,6 +1088,7 @@ ul {
   height: 2px;
   background: var(--orange);
   margin-top: 0.75rem;
+  border-radius: 1px;
 }
 
 .service-card-title {
@@ -995,6 +1109,10 @@ ul {
 .service-card-text em {
   color: var(--orange);
   font-style: italic;
+}
+
+.service-card--featured .service-card-text em {
+  color: var(--amber);
 }
 
 .service-card-features {
@@ -1024,7 +1142,10 @@ ul {
   border-color: var(--amber);
 }
 
-/* --- Journey Section --- */
+
+/* ============================================================
+   JOURNEY / PROCESS SECTION — Light warm background
+   ============================================================ */
 .journey {
   background: linear-gradient(180deg, var(--cream) 0%, var(--parchment) 100%);
   overflow: hidden;
@@ -1046,7 +1167,7 @@ ul {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, var(--orange-bright), var(--amber), var(--jade-muted), var(--teal));
+  background: linear-gradient(to bottom, var(--orange-bright), var(--amber), var(--copper-light), var(--copper));
 }
 
 .journey-step {
@@ -1069,6 +1190,7 @@ ul {
   justify-content: center;
   background: var(--warm-white);
   border: 2px solid var(--orange);
+  border-radius: 10px;
   position: relative;
   z-index: 1;
   transition: all 0.4s ease;
@@ -1083,7 +1205,7 @@ ul {
 
 .journey-step:hover .journey-step-marker {
   background: var(--orange);
-  transform: rotate(45deg);
+  transform: rotate(45deg) scale(1.05);
 }
 
 .journey-step:hover .journey-step-marker span {
@@ -1105,15 +1227,19 @@ ul {
   line-height: 1.8;
 }
 
-/* --- Testimonials Section --- */
+
+/* ============================================================
+   TESTIMONIALS SECTION — Dark Warm Brown-Orange
+   Like an old Italian wine cellar
+   ============================================================ */
 .testimonials {
   background: linear-gradient(
     160deg,
-    #253028 0%,
-    #344238 30%,
-    #3E5043 55%,
-    #3A4A3E 75%,
-    #2E3E32 100%
+    #4A2818 0%,
+    #5A3220 30%,
+    #6B3420 55%,
+    #5A3220 75%,
+    #4A2818 100%
   );
   position: relative;
   overflow: hidden;
@@ -1124,6 +1250,7 @@ ul {
   inset: 0;
 }
 
+/* Dot pattern — like aged brick texture */
 .testimonials-pattern {
   position: absolute;
   inset: 0;
@@ -1148,11 +1275,13 @@ ul {
   padding: 2.5rem;
   transition: all 0.5s var(--ease-out);
   backdrop-filter: blur(4px);
+  border-radius: 10px;
 }
 
 .testimonial-card:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.09);
   transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
 }
 
 .testimonial-stars {
@@ -1192,6 +1321,7 @@ ul {
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 600;
+  border-radius: 50%;
 }
 
 .testimonial-author strong {
@@ -1207,7 +1337,10 @@ ul {
   letter-spacing: 0.05em;
 }
 
-/* --- CTA Section --- */
+
+/* ============================================================
+   CTA SECTION — Warm parchment background
+   ============================================================ */
 .cta-section {
   background: linear-gradient(180deg, var(--parchment) 0%, var(--cream) 100%);
   padding: 5rem 0;
@@ -1220,13 +1353,15 @@ ul {
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-radius: 12px;
 }
 
 .cta-card::before {
   content: '';
   position: absolute;
   inset: 15px;
-  border: 1px solid rgba(184, 120, 92, 0.15);
+  border: 1px solid rgba(198, 125, 74, 0.15);
+  border-radius: 8px;
   pointer-events: none;
 }
 
@@ -1243,6 +1378,7 @@ ul {
   left: 30px;
   border-top: 2px solid var(--copper);
   border-left: 2px solid var(--copper);
+  border-radius: 4px 0 0 0;
 }
 
 .cta-card-ornament--tr {
@@ -1250,6 +1386,7 @@ ul {
   right: 30px;
   border-top: 2px solid var(--copper);
   border-right: 2px solid var(--copper);
+  border-radius: 0 4px 0 0;
 }
 
 .cta-card-ornament--bl {
@@ -1257,6 +1394,7 @@ ul {
   left: 30px;
   border-bottom: 2px solid var(--copper);
   border-left: 2px solid var(--copper);
+  border-radius: 0 0 0 4px;
 }
 
 .cta-card-ornament--br {
@@ -1264,6 +1402,7 @@ ul {
   right: 30px;
   border-bottom: 2px solid var(--copper);
   border-right: 2px solid var(--copper);
+  border-radius: 0 0 4px 0;
 }
 
 .cta-card-heading {
@@ -1282,7 +1421,10 @@ ul {
   line-height: 1.8;
 }
 
-/* --- Contact Section --- */
+
+/* ============================================================
+   CONTACT SECTION — Off-white background
+   ============================================================ */
 .contact {
   background: var(--offwhite);
   overflow: hidden;
@@ -1320,6 +1462,7 @@ ul {
   align-items: center;
   justify-content: center;
   border: 1px solid var(--light-gray);
+  border-radius: 8px;
   color: var(--orange);
   flex-shrink: 0;
 }
@@ -1360,6 +1503,7 @@ ul {
   align-items: center;
   justify-content: center;
   border: 1px solid var(--light-gray);
+  border-radius: 8px;
   color: var(--warm-gray);
   transition: all 0.3s ease;
 }
@@ -1373,13 +1517,15 @@ ul {
   background: var(--orange);
   border-color: var(--orange);
   color: var(--offwhite);
+  transform: translateY(-2px);
 }
 
-/* Contact Form */
+/* --- Contact Form --- */
 .contact-form {
   background: var(--warm-white);
   border: 1px solid var(--light-gray);
   padding: 3rem;
+  border-radius: 12px;
 }
 
 .form-group {
@@ -1407,9 +1553,9 @@ ul {
   color: var(--charcoal);
   background: var(--offwhite);
   border: 1px solid var(--light-gray);
+  border-radius: 8px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   -webkit-appearance: none;
-  border-radius: 0;
 }
 
 .form-group input::placeholder,
@@ -1421,7 +1567,7 @@ ul {
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--copper);
+  border-color: var(--orange);
   box-shadow: 0 0 0 3px var(--copper-glow);
 }
 
@@ -1432,7 +1578,7 @@ ul {
 
 .form-group select {
   cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%238B8178'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%23938A80'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
   padding-right: 2.5rem;
@@ -1447,9 +1593,12 @@ ul {
   font-style: italic;
 }
 
-/* --- Footer --- */
+
+/* ============================================================
+   FOOTER — Dark Warm Brown
+   ============================================================ */
 .footer {
-  background: linear-gradient(180deg, #344238 0%, #253028 100%);
+  background: linear-gradient(180deg, #3A2418 0%, #2A1810 100%);
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -1485,6 +1634,7 @@ ul {
   height: 2px;
   background: var(--orange);
   opacity: 0.6;
+  border-radius: 1px;
 }
 
 .footer-links h4 {
@@ -1520,7 +1670,10 @@ ul {
   color: rgba(255, 255, 255, 0.35);
 }
 
-/* --- Animations --- */
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
 .fade-up {
   opacity: 0;
   transform: translateY(30px);
@@ -1555,7 +1708,12 @@ ul {
   transform: translate(0);
 }
 
-/* --- Responsive --- */
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+/* --- 1024px — Tablet landscape / small desktop --- */
 @media (max-width: 1024px) {
   .about-grid {
     grid-template-columns: 1fr;
@@ -1568,7 +1726,6 @@ ul {
   }
 
   .philosophy-grid,
-  .services-grid,
   .testimonials-grid {
     grid-template-columns: 1fr;
     max-width: 500px;
@@ -1576,8 +1733,11 @@ ul {
     margin-right: auto;
   }
 
+  .philosophy-grid {
+    margin-bottom: 4rem;
+  }
+
   .services-grid {
-    max-width: 100%;
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1602,8 +1762,13 @@ ul {
   .footer-brand {
     grid-column: 1 / -1;
   }
+
+  .hero-arch {
+    padding: 3rem 2.5rem 2.5rem;
+  }
 }
 
+/* --- 768px — Tablet portrait / large mobile --- */
 @media (max-width: 768px) {
   :root {
     --section-pad: 5rem;
@@ -1620,7 +1785,7 @@ ul {
     width: 80%;
     max-width: 320px;
     height: 100vh;
-    background: #344238;
+    background: #3A2418;
     flex-direction: column;
     align-items: flex-start;
     padding: 6rem 2rem 2rem;
@@ -1652,10 +1817,35 @@ ul {
     border: none;
     padding: 1rem 0;
     margin-top: 0.5rem;
+    border-radius: 0;
   }
 
   .hero-heading {
     font-size: clamp(2.2rem, 8vw, 3.5rem);
+  }
+
+  .hero-arch {
+    padding: 2.5rem 2rem 2rem;
+    border-radius: 50% 50% 0 0 / 12% 12% 0 0;
+  }
+
+  .hero-arch::before {
+    border-radius: 50% 50% 0 0 / 12% 12% 0 0;
+  }
+
+  .hero-float--1 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-float--2 {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hero-float--3 {
+    width: 100px;
+    height: 100px;
   }
 
   .services-grid {
@@ -1666,6 +1856,10 @@ ul {
   .testimonials-grid {
     max-width: 100%;
     grid-template-columns: 1fr;
+  }
+
+  .section-wave {
+    height: 50px;
   }
 
   .cta-card {
@@ -1684,8 +1878,14 @@ ul {
   .hero-subheading br {
     display: none;
   }
+
+  .about-image-dots {
+    width: 60px;
+    height: 60px;
+  }
 }
 
+/* --- 480px — Small mobile --- */
 @media (max-width: 480px) {
   :root {
     --section-pad: 4rem;
@@ -1693,6 +1893,16 @@ ul {
 
   .container {
     padding: 0 1.25rem;
+  }
+
+  .hero-arch {
+    padding: 2rem 1.5rem 1.5rem;
+    border-radius: 50% 50% 0 0 / 10% 10% 0 0;
+  }
+
+  .hero-arch::before {
+    inset: 5px;
+    border-radius: 50% 50% 0 0 / 10% 10% 0 0;
   }
 
   .hero-cta {
@@ -1724,5 +1934,34 @@ ul {
 
   .section-heading {
     font-size: clamp(1.7rem, 5vw, 2.4rem);
+  }
+
+  .section-wave {
+    height: 40px;
+  }
+
+  .philosophy-card-num {
+    font-size: 2rem;
+  }
+
+  .about-image-dots {
+    width: 50px;
+    height: 50px;
+    top: -10px;
+    left: -10px;
+  }
+
+  .cta-card-ornament {
+    width: 25px;
+    height: 25px;
+  }
+
+  .cta-card-ornament--tl { top: 15px; left: 15px; }
+  .cta-card-ornament--tr { top: 15px; right: 15px; }
+  .cta-card-ornament--bl { bottom: 15px; left: 15px; }
+  .cta-card-ornament--br { bottom: 15px; right: 15px; }
+
+  .cta-card::before {
+    inset: 8px;
   }
 }
