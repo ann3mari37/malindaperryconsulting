@@ -82,7 +82,7 @@
 
       if (navLink) {
         if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-          navLink.style.color = '#E8923E';
+          navLink.style.color = '#4CA898';
         } else {
           navLink.style.color = '';
         }
@@ -133,7 +133,7 @@
       var x = e.clientX - rect.left;
       var y = e.clientY - rect.top;
       ctaCard.style.background =
-        'radial-gradient(500px circle at ' + x + 'px ' + y + 'px, rgba(212,120,58,0.1), transparent 40%), linear-gradient(135deg, #FBF6EF, #FDF8F2)';
+        'radial-gradient(500px circle at ' + x + 'px ' + y + 'px, rgba(61,139,122,0.1), transparent 40%), linear-gradient(135deg, #F2F8F6, #F5FAF8)';
     });
 
     ctaCard.addEventListener('mouseleave', function () {
