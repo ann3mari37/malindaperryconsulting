@@ -59,14 +59,21 @@
 
     reveals.forEach(function (el) {
       var elementTop = el.getBoundingClientRect().top;
-      if (elementTop < windowHeight - 100) {
+      if (elementTop < windowHeight - 60) {
         el.classList.add('visible');
       }
     });
   }
 
   window.addEventListener('scroll', revealOnScroll, { passive: true });
+
+  // Run immediately and again after a short delay to catch any elements
+  // that may not have fully rendered yet (fonts, layout shifts)
   revealOnScroll();
+  requestAnimationFrame(function () {
+    revealOnScroll();
+    handleNavScroll();
+  });
 
   // --- Active Nav Link Highlight ---
   var sections = document.querySelectorAll('section[id]');
@@ -82,9 +89,9 @@
 
       if (navLink) {
         if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-          navLink.style.color = '#4CA898';
+          navLink.classList.add('active');
         } else {
-          navLink.style.color = '';
+          navLink.classList.remove('active');
         }
       }
     });
@@ -100,9 +107,10 @@
   function handleParallax() {
     var scrollY = window.pageYOffset;
     if (scrollY < window.innerHeight) {
-      var offset = scrollY * 0.25;
+      var offset = scrollY * 0.2;
+      // Use a wrapper transform only — never set opacity on heroContent
+      // as it overrides fade-up animations on child elements (buttons, text)
       heroContent.style.transform = 'translateY(' + offset + 'px)';
-      heroContent.style.opacity = 1 - (scrollY / (window.innerHeight * 0.7));
       if (heroPattern) {
         heroPattern.style.transform = 'translateY(' + (scrollY * 0.1) + 'px)';
       }
