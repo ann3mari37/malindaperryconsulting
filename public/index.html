@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=11">
+  <link rel="stylesheet" href="css/site.css?v=16">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -58,12 +58,19 @@
         </div>
         <figure class="hero-photo">
           <img src="images/headshot.jpg" alt="MaLinda Perry" width="896" height="1088">
+          <a href="#contact" class="badge js-schedule" aria-label="Book a free 20-minute call">
+            <svg class="badge-ring" viewBox="0 0 120 120" aria-hidden="true">
+              <defs><path id="badgePath" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
+              <text><textPath href="#badgePath">FREE 20-MIN CALL &#8226; BOOK YOURS &#8226; </textPath></text>
+            </svg>
+            <span class="badge-arrow" aria-hidden="true">&rarr;</span>
+          </a>
         </figure>
       </div>
     </section>
 
     <!-- ============ BOOKS (first) ============ -->
-    <section class="books-band" id="books" aria-labelledby="books-title">
+    <section class="books-band edge edge-curve" style="--from: var(--cream)" id="books" aria-labelledby="books-title">
       <div class="wrap">
         <header class="head head-light">
           <p class="kicker">The Books</p>
@@ -73,15 +80,45 @@
       </div>
     </section>
 
+    <!-- ============ SOUND FAMILIAR? (emotional hook) ============ -->
+    <section class="feel edge edge-tilt" style="--from: var(--paper)" aria-labelledby="feel-title">
+      <div class="wrap">
+        <header class="head">
+          <p class="kicker">Sound familiar?</p>
+          <h2 id="feel-title">You're working hard. So why does it feel <span class="hl">this</span> hard?</h2>
+        </header>
+        <div class="feel-grid">
+          <blockquote class="feel-card"><span class="feel-tag">At work</span><p>&ldquo;I'm good at my job, but I'm running on empty.&rdquo;</p></blockquote>
+          <blockquote class="feel-card"><span class="feel-tag">As a leader</span><p>&ldquo;My team is talented, but we keep stepping on each other.&rdquo;</p></blockquote>
+          <blockquote class="feel-card"><span class="feel-tag">At home</span><p>&ldquo;Home feels more like a to-do list than a family.&rdquo;</p></blockquote>
+          <blockquote class="feel-card"><span class="feel-tag">In yourself</span><p>&ldquo;I know I'm capable of more. I just can't put my finger on it.&rdquo;</p></blockquote>
+        </div>
+        <div class="feel-turn">
+          <p class="feel-big">You're not broken. <span class="hl">You've been working against your strengths.</span></p>
+          <p class="feel-sub">When you know what you naturally do best, work gets lighter, teams click, and home feels like home again.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary btn-lg js-schedule">Find your strengths</a>
+            <a href="#coaching" class="btn btn-outline-light btn-lg">See how it works</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ STATEMENT ============ -->
-    <section class="statement" aria-label="What changes">
+    <section class="statement edge edge-wave" style="--from: var(--espresso)" aria-label="What changes">
       <div class="wrap">
         <p>Grow <span>forward.</span></p>
+      </div>
+      <div class="ribbon" aria-hidden="true">
+        <div class="ribbon-track">
+          <span>Clarity</span><span>Confidence</span><span>Purpose</span><span>Momentum</span><span>Connection</span><span>Courage</span><span>Focus</span><span>Joy</span>
+          <span>Clarity</span><span>Confidence</span><span>Purpose</span><span>Momentum</span><span>Connection</span><span>Courage</span><span>Focus</span><span>Joy</span>
+        </div>
       </div>
     </section>
 
     <!-- ============ COACHING ============ -->
-    <section class="section" id="coaching" aria-labelledby="coaching-title">
+    <section class="section edge edge-tilt-r" style="--from: var(--apricot)" id="coaching" aria-labelledby="coaching-title">
       <div class="wrap">
         <header class="head">
           <p class="kicker kicker-dark">Coaching</p>
@@ -121,7 +158,7 @@
     </section>
 
     <!-- ============ EVENTS ============ -->
-    <section class="section section-alt" id="events" aria-labelledby="events-title">
+    <section class="section section-alt edge edge-curve" style="--from: var(--cream)" id="events" aria-labelledby="events-title">
       <div class="wrap">
         <header class="head head-row">
           <div>
@@ -135,7 +172,7 @@
     </section>
 
     <!-- ============ ABOUT ============ -->
-    <section class="about" id="about" aria-labelledby="about-title">
+    <section class="about edge edge-wave" style="--from: var(--cream-2)" id="about" aria-labelledby="about-title">
       <div class="wrap about-grid">
         <div class="about-photo">
           <img src="images/headshot.jpg" alt="" width="896" height="1088" loading="lazy">
@@ -151,8 +188,25 @@
       </div>
     </section>
 
+    <!-- ============ BIG CALL TO ACTION ============ -->
+    <section class="cta-band edge edge-tilt" style="--from: var(--lagoon-dark)" aria-labelledby="cta-title">
+      <div class="wrap cta-inner">
+        <h2 id="cta-title">Ready to <span class="hl-dark">grow forward?</span></h2>
+        <p class="cta-sub">Your first conversation is free. Twenty minutes, no pressure, and a clear next step.</p>
+        <div class="hero-actions cta-actions">
+          <a href="#contact" class="btn btn-teal btn-lg js-schedule">Book your free call</a>
+          <a href="#books" class="btn btn-ghost btn-lg">Start with the book</a>
+        </div>
+        <ul class="assure">
+          <li>Free 20-minute call</li>
+          <li>Online, from anywhere</li>
+          <li>No pressure, ever</li>
+        </ul>
+      </div>
+    </section>
+
     <!-- ============ CONTACT ============ -->
-    <section class="section" id="contact" aria-labelledby="contact-title">
+    <section class="section edge edge-curve" style="--from: var(--terracotta)" id="contact" aria-labelledby="contact-title">
       <div class="wrap contact-grid">
         <div>
           <p class="kicker kicker-dark">Let's talk</p>
