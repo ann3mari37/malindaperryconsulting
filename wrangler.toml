@@ -1,0 +1,14 @@
+name = "malindaperryconsulting"
+pages_build_output_dir = "public"
+compatibility_date = "2026-10-01"
+
+# Deploy (account: ann3mari37@gmail.com's Account):
+#   CLOUDFLARE_ACCOUNT_ID=1ee0ccf466cef622b87273a6b7d79056 npx wrangler@3.112.0 pages deploy --branch main
+
+# Contact-form messages. Create with:  npx wrangler kv namespace create CONTACT_KV
+# [[kv_namespaces]]
+# binding = "CONTACT_KV"
+# id = "PASTE_ID_HERE"
+
+# Optional email delivery for the contact form (set as secrets):
+#   RESEND_API_KEY  + CONTACT_TO
