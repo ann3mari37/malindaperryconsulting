@@ -102,36 +102,37 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1
 .hero-photo img { position: relative; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 18%; border-radius: 2px; box-shadow: var(--shadow-lg); }
 
 /* ---------- Books band ---------- */
-.books-band { background: var(--night-2); color: var(--ivory); padding: 64px 0 72px; position: relative; }
+.books-band { background: var(--ivory); color: var(--ink); padding: 64px 0 72px; position: relative; }
 .head { margin-bottom: 32px; max-width: 680px; }
-.head-light h2 { color: #fff; }
+.head-light h2 { color: var(--ink); }
+.books-band .kicker { color: var(--orange-dark); }
 .head-row { max-width: none; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
 .head-row h2 { margin-bottom: 0; }
 .books { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 20px; }
-.book { display: grid; grid-template-columns: 130px 1fr; gap: 24px; align-items: center; padding: 24px; border-radius: 2px; background: rgba(255, 255, 255, .03); border: 1px solid rgba(255, 255, 255, .12); transition: background .3s, transform .3s; }
-.book:hover { background: rgba(255, 255, 255, .06); border-color: rgba(255, 255, 255, .3); }
-.book-cover { aspect-ratio: 2 / 3; border-radius: 2px 6px 6px 2px; overflow: hidden; box-shadow: 0 14px 26px -12px rgba(0, 0, 0, .6), inset 5px 0 0 rgba(0, 0, 0, .12); transform: perspective(800px) rotateY(-6deg); transition: transform .4s; }
+.book { display: grid; grid-template-columns: 130px 1fr; gap: 24px; align-items: center; padding: 24px; border-radius: 2px; background: var(--paper); border: 1px solid var(--line); transition: border-color .3s, transform .3s; }
+.book:hover { border-color: var(--ink); }
+.book-cover { aspect-ratio: 2 / 3; border-radius: 2px 6px 6px 2px; overflow: hidden; box-shadow: 0 14px 26px -14px rgba(0, 0, 0, .45), inset 5px 0 0 rgba(0, 0, 0, .12); transform: perspective(800px) rotateY(-6deg); transition: transform .4s; }
 .book:hover .book-cover { transform: perspective(800px) rotateY(0); }
 .book-cover img { width: 100%; height: 100%; object-fit: cover; }
 .cover-art { height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 14px 12px 12px 16px; background: var(--teal-dark); color: #fff; position: relative; border-top: 6px solid var(--orange); }
-.book:nth-child(even) .cover-art { background: var(--ivory); color: var(--ink); }
+.book:nth-child(even) .cover-art { background: var(--orange); color: #fff; border-top-color: var(--night); }
 .cover-art::before { content: ""; position: absolute; left: 7px; top: 0; bottom: 0; width: 1px; background: rgba(0, 0, 0, .12); }
 .cover-art b { font: 800 1.05rem/1.05 var(--serif); letter-spacing: -.02em; }
 .cover-art small { font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; opacity: .75; font-weight: 700; }
 .cover-arch { display: none; }
-.book-meta { font-size: .7rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--orange-lt); margin-bottom: 8px; }
-.book h3 { color: #fff; font-size: 1.6rem; margin-bottom: .15em; }
-.book-sub { font-family: var(--sans); font-style: normal; font-weight: 500; color: var(--on-dark); font-size: 1rem; margin-bottom: .6em; }
-.book > div > p:not(.book-meta):not(.book-sub) { color: var(--on-dark); }
+.book-meta { font-size: .7rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--orange-dark); margin-bottom: 8px; }
+.book h3 { color: var(--ink); font-size: 1.6rem; margin-bottom: .15em; }
+.book-sub { font-family: var(--sans); font-style: normal; font-weight: 500; color: var(--muted); font-size: 1rem; margin-bottom: .6em; }
+.book > div > p:not(.book-meta):not(.book-sub) { color: var(--muted); }
 .book .card-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: 6px; }
-.books-band .btn-text { color: #fff; text-decoration-color: var(--orange-lt); }
-.books-band .btn-ghost { --fg: #fff; --bd: rgba(255, 255, 255, .55); }
-.books-band .btn-ghost:hover { --bg: #fff; --fg: var(--night); }
-.soon { font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(246, 243, 238, .55); }
+.books-band .btn-text { color: var(--ink); text-decoration-color: var(--orange); }
+.books-band .btn-ghost { --fg: var(--ink); --bd: var(--ink); }
+.books-band .btn-ghost:hover { --bg: var(--ink); --fg: #fff; }
+.soon { font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .empty { text-align: center; padding: 44px 24px; border: 1.5px solid var(--line); border-radius: var(--radius); color: var(--muted); background: var(--paper); }
 .empty h3 { color: var(--ink); }
-.books-band .empty { background: transparent; border-color: rgba(251, 247, 239, .15); color: var(--on-dark); }
-.books-band .empty h3 { color: #fff; }
+.books-band .empty { background: var(--paper); border-color: var(--line); color: var(--muted); }
+.books-band .empty h3 { color: var(--ink); }
 
 /* ---------- Statement ---------- */
 .statement { background: var(--orange); color: #fff; padding: 40px 0; overflow: hidden; }
