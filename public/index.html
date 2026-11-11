@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=16">
+  <link rel="stylesheet" href="css/site.css?v=17">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -32,6 +32,7 @@
         <a href="#coaching">Coaching</a>
         <a href="#events">Events</a>
         <a href="#about">About</a>
+        <a href="/start" class="nav-new">New here?</a>
       </nav>
       <a href="#contact" class="btn btn-primary btn-sm js-schedule header-cta">Book a call</a>
       <button class="menu-btn" id="menuBtn" aria-controls="nav" aria-expanded="false" aria-label="Open menu">
@@ -188,8 +189,23 @@
       </div>
     </section>
 
+    <!-- ============ NEW HERE? (leads to MaLinda's letter at /start) ============ -->
+    <section class="new-here edge edge-curve" style="--from: var(--lagoon-dark)" aria-labelledby="new-title">
+      <div class="wrap">
+        <a href="/start" class="note-card">
+          <img class="note-photo" src="images/headshot.jpg" alt="" width="896" height="1088" loading="lazy">
+          <div class="note-body">
+            <p class="kicker">New here?</p>
+            <h2 id="new-title">Oh my gosh, hi. <span class="hl">I wrote you a note.</span></h2>
+            <p class="note-sub">If you're not sure where to begin, start here. It's short, it's personal, and it'll point you to the right first step.</p>
+            <span class="btn btn-teal btn-lg">Read my letter &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
     <!-- ============ BIG CALL TO ACTION ============ -->
-    <section class="cta-band edge edge-tilt" style="--from: var(--lagoon-dark)" aria-labelledby="cta-title">
+    <section class="cta-band edge edge-tilt" style="--from: var(--cream)" aria-labelledby="cta-title">
       <div class="wrap cta-inner">
         <h2 id="cta-title">Ready to <span class="hl-dark">grow forward?</span></h2>
         <p class="cta-sub">Your first conversation is free. Twenty minutes, no pressure, and a clear next step.</p>
@@ -259,6 +275,7 @@
         <a href="#coaching">Coaching</a>
         <a href="#events">Events</a>
         <a href="#contact">Contact</a>
+        <a href="/start">New here?</a>
       </nav>
       <div class="footer-social" id="social"></div>
     </div>

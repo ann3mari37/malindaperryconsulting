@@ -418,3 +418,61 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1
 /* Shaped sections clip sideways only, so their top shape can overlap the
    section above and no hairline shows at the seam. */
 .edge.statement, .edge.feel, .edge.cta-band, .edge.about { overflow: visible; overflow-x: clip; }
+
+/* =============================================================
+   "New here?" — menu link, homepage note card, and the letter page
+   ============================================================= */
+.nav a.nav-new { color: var(--terracotta-hi); font-weight: 600; }
+
+.new-here { background: var(--cream); padding-bottom: 96px; }
+.note-card {
+  display: grid; grid-template-columns: 220px 1fr; gap: 44px; align-items: center;
+  max-width: 980px; margin: 0 auto; padding: 40px 48px; text-decoration: none; color: var(--espresso);
+  background: var(--paper); border: 1px solid var(--line); border-radius: 10px;
+  box-shadow: 0 30px 60px -40px rgba(22, 58, 60, .45); transform: rotate(-.6deg);
+  transition: transform .35s ease, box-shadow .35s ease; position: relative;
+}
+.note-card::after { /* a strip of "tape" holding the note */
+  content: ""; position: absolute; top: -14px; left: 50%; width: 120px; height: 28px; margin-left: -60px;
+  background: rgba(243, 201, 164, .75); transform: rotate(2deg); border-radius: 2px;
+}
+.note-card:hover { transform: rotate(0) translateY(-4px); box-shadow: 0 40px 70px -40px rgba(22, 58, 60, .55); color: var(--espresso); }
+.note-photo { width: 220px; aspect-ratio: 1; object-fit: cover; object-position: 50% 20%; border-radius: 50%; border: 6px solid var(--cream); box-shadow: 0 14px 30px -18px rgba(22, 58, 60, .6); }
+.note-body h2 { font-size: clamp(2rem, 4vw, 3rem); }
+.note-sub { color: var(--muted); font-size: 1.15rem; max-width: 30em; margin-bottom: 24px; }
+
+/* the letter page */
+.letter-page { background: var(--cream-2); }
+.letter-wrap { padding: 56px 0 96px; }
+.letter {
+  max-width: 760px; margin: 0 auto; background: var(--paper); border-radius: 10px;
+  padding: 56px 64px 60px; box-shadow: 0 40px 80px -50px rgba(22, 58, 60, .55); border: 1px solid var(--line);
+  font-size: 1.12rem; line-height: 1.7;
+}
+.letter-head { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+.letter-head .kicker { margin: 0; }
+.letter-photo { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; object-position: 50% 20%; }
+.letter h1 { font-size: clamp(2.3rem, 5.4vw, 3.6rem); margin-bottom: 28px; }
+.letter-lead { font-size: 1.3rem; line-height: 1.55; color: var(--espresso); }
+.letter p { color: #3d4a49; }
+.start-steps { list-style: none; padding: 0; margin: 34px 0 38px; display: grid; gap: 14px; }
+.start-steps li { display: grid; grid-template-columns: 52px 1fr; gap: 18px; padding: 24px 26px; border-radius: 8px; background: var(--cream); border: 1px solid var(--line); }
+.start-steps li:nth-child(2) { background: var(--apricot-soft); border-color: var(--apricot); }
+.step-num { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--espresso); color: var(--apricot); font: 700 1.3rem var(--display); }
+.start-steps h2 { font-size: 1.35rem; line-height: 1.2; letter-spacing: -.02em; margin: 6px 0 6px; }
+.start-steps p { margin: 0 0 12px; font-size: 1.02rem; }
+.letter-close { font: 700 1.6rem/1.2 var(--display); letter-spacing: -.03em; color: var(--espresso) !important; margin: 30px 0 0; }
+.signature { font: 600 3.2rem/1 "Caveat", cursive; color: var(--terracotta-hi) !important; margin: 10px 0 4px; transform: rotate(-3deg); transform-origin: left; }
+.sig-title { font-size: .92rem; color: var(--muted) !important; }
+
+@media (max-width: 760px) {
+  .note-card { grid-template-columns: 1fr; text-align: center; padding: 40px 24px 32px; gap: 22px; transform: none; }
+  .note-photo { width: 140px; margin: 0 auto; }
+  .note-body .kicker { justify-content: center; }
+  .note-sub { margin-left: auto; margin-right: auto; }
+  .new-here { padding-bottom: 64px; }
+  .letter-wrap { padding: 24px 0 64px; }
+  .letter { padding: 36px 22px 40px; font-size: 1.05rem; }
+  .start-steps li { grid-template-columns: 1fr; padding: 20px 18px; gap: 10px; }
+  .step-num { width: 42px; height: 42px; font-size: 1.1rem; }
+}
