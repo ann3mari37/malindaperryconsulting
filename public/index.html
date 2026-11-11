@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=17">
+  <link rel="stylesheet" href="css/site.css?v=19">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -32,7 +32,6 @@
         <a href="#coaching">Coaching</a>
         <a href="#events">Events</a>
         <a href="#about">About</a>
-        <a href="/start" class="nav-new">New here?</a>
       </nav>
       <a href="#contact" class="btn btn-primary btn-sm js-schedule header-cta">Book a call</a>
       <button class="menu-btn" id="menuBtn" aria-controls="nav" aria-expanded="false" aria-label="Open menu">
@@ -52,17 +51,17 @@
           <h1>Stop fixing what's wrong. <em>Build on what's strong.</em></h1>
           <p class="lede">Coaching, books and live events for people ready for what's next.</p>
           <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary btn-lg js-schedule">Book your free call</a>
-            <a href="#books" class="btn btn-outline-light btn-lg">Get the book</a>
+            <a href="#contact" class="btn btn-primary btn-lg js-schedule">Book a call</a>
+            <a href="#books" class="btn btn-outline-light btn-lg">Get UNSTUCK</a>
           </div>
-          <p class="powered">Powered by Gallup CliftonStrengths<sup>®</sup> &amp; iNcredible Family</p>
+          <p class="powered">Gallup Certified Strengths Coach &middot; iNcredible Family Master Coach</p>
         </div>
         <figure class="hero-photo">
           <img src="images/headshot.jpg" alt="MaLinda Perry" width="896" height="1088">
-          <a href="#contact" class="badge js-schedule" aria-label="Book a free 20-minute call">
+          <a href="#contact" class="badge js-schedule" aria-label="Book a call with MaLinda">
             <svg class="badge-ring" viewBox="0 0 120 120" aria-hidden="true">
               <defs><path id="badgePath" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
-              <text><textPath href="#badgePath">FREE 20-MIN CALL &#8226; BOOK YOURS &#8226; </textPath></text>
+              <text><textPath href="#badgePath">LET&#8217;S FIND YOUR MAGIC &#8226; BOOK A CALL &#8226; </textPath></text>
             </svg>
             <span class="badge-arrow" aria-hidden="true">&rarr;</span>
           </a>
@@ -196,7 +195,7 @@
           <img class="note-photo" src="images/headshot.jpg" alt="" width="896" height="1088" loading="lazy">
           <div class="note-body">
             <p class="kicker">New here?</p>
-            <h2 id="new-title">Oh my gosh, hi. <span class="hl">I wrote you a note.</span></h2>
+            <h2 id="new-title">Oh my gosh! You made it. <span class="hl">I wrote you a little note.</span></h2>
             <p class="note-sub">If you're not sure where to begin, start here. It's short, it's personal, and it'll point you to the right first step.</p>
             <span class="btn btn-teal btn-lg">Read my letter &rarr;</span>
           </div>
@@ -208,13 +207,13 @@
     <section class="cta-band edge edge-tilt" style="--from: var(--cream)" aria-labelledby="cta-title">
       <div class="wrap cta-inner">
         <h2 id="cta-title">Ready to <span class="hl-dark">grow forward?</span></h2>
-        <p class="cta-sub">Your first conversation is free. Twenty minutes, no pressure, and a clear next step.</p>
+        <p class="cta-sub">One conversation can get you unstuck. No pressure, just a clear next step.</p>
         <div class="hero-actions cta-actions">
-          <a href="#contact" class="btn btn-teal btn-lg js-schedule">Book your free call</a>
-          <a href="#books" class="btn btn-ghost btn-lg">Start with the book</a>
+          <a href="#contact" class="btn btn-teal btn-lg js-schedule">Book a call</a>
+          <a href="#books" class="btn btn-ghost btn-lg">Start with UNSTUCK</a>
         </div>
         <ul class="assure">
-          <li>Free 20-minute call</li>
+          <li>One-on-one, just you and me</li>
           <li>Online, from anywhere</li>
           <li>No pressure, ever</li>
         </ul>
@@ -227,7 +226,7 @@
         <div>
           <p class="kicker kicker-dark">Let's talk</p>
           <h2 id="contact-title">Your next chapter starts with one conversation.</h2>
-          <p class="sub">The first call is free. Tell me where you are, and we'll go from there.</p>
+          <p class="sub">Tell me where you are, and we'll go from there.</p>
           <a href="#contact" class="btn btn-teal js-schedule schedule-only" hidden>Pick a time</a>
           <p class="mail"><a class="js-email" href="#">Email</a></p>
         </div>
@@ -285,6 +284,12 @@
     </div>
   </footer>
 
+  <!-- Round "New here?" button, always in reach (goes to MaLinda's letter) -->
+  <a href="/start" class="new-round" aria-label="New here? Read MaLinda's note on where to start">
+    <span class="new-round-top">New</span>
+    <span class="new-round-main">here?</span>
+  </a>
+
   <!-- Mobile sticky action bar -->
   <nav class="mobile-bar" aria-label="Quick actions">
     <a href="#contact" class="btn btn-primary btn-sm js-schedule">Book a call</a>
@@ -314,7 +319,7 @@
       <li>A clear plan after every session</li>
     </ul>
     <div class="modal-actions">
-      <a href="#contact" class="btn btn-primary js-schedule" data-interest="Individual coaching">Book your free call</a>
+      <a href="#contact" class="btn btn-primary js-schedule" data-interest="Individual coaching">Book a call</a>
     </div>
   </template>
 
@@ -352,10 +357,10 @@
     <p class="kicker kicker-dark">Meet MaLinda</p>
     <h2 id="modal-title">MaLinda Perry</h2>
     <!-- TODO: replace with MaLinda's own bio (background, certifications, family, where she's based). -->
-    <p>MaLinda Perry is a strengths coach, author and speaker who works with individuals, teams and families.</p>
+    <p>MaLinda Perry is a Gallup Certified Strengths Coach, an iNcredible Family Master Coach, and the author of <em>UNSTUCK: Your Personal Journey From Stuck to Possibility</em>. She works with individuals, teams and families.</p>
     <p>She uses Gallup's CliftonStrengths and the iNcredible Family approach to help people name what they do best and build their lives and work around it.</p>
     <div class="modal-actions">
-      <a href="#contact" class="btn btn-primary js-schedule">Book your free call</a>
+      <a href="#contact" class="btn btn-primary js-schedule">Book a call</a>
     </div>
   </template>
 

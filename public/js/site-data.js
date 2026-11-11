@@ -37,30 +37,18 @@ window.SITE = {
      ----------------------------------------------------------- */
   books: [
     {
-      title: "Book Title One",               // TODO
-      subtitle: "A short, clear subtitle",   // TODO
-      cover: "",
-      format: "Ebook",
-      blurb: "One or two sentences on who this book is for and what they'll walk away with.", // TODO
+      title: "UNSTUCK",
+      subtitle: "Your Personal Journey From Stuck to Possibility",
+      cover: "",   // TODO: add the real cover, e.g. "images/books/unstuck.jpg"
+      format: "A companion workbook",
+      blurb: "This isn't another assignment for your overflowing to-do list. This is time for YOU: to see who you are, own what makes you extraordinary, and live it.",
       details: [
-        "A longer description shows here when someone taps \"About this book.\"",
-        "Use a couple of short paragraphs: the problem, the approach, and what changes for the reader."
-      ], // TODO
-      buy: [
-        { label: "Get the ebook", url: "" } // TODO BookFunnel link
-      ]
-    },
-    {
-      title: "Book Title Two",               // TODO
-      subtitle: "A short, clear subtitle",   // TODO
-      cover: "",
-      format: "Ebook",
-      blurb: "One or two sentences on who this book is for and what they'll walk away with.", // TODO
-      details: [
-        "A longer description shows here when someone taps \"About this book.\""
+        "Time to think about who you are, what makes you extraordinary, and what might be possible if you stopped carrying around some of those rocks you've collected along the way.",
+        "You don't need to have all the answers. You don't need to know exactly where you're going. And you certainly don't need to become somebody else.",
+        "Grab your favorite beverage, find a comfortable spot, and let's go find your magic. See it. Own it. Live it."
       ],
       buy: [
-        { label: "Get the ebook", url: "" } // TODO BookFunnel link
+        { label: "Get the workbook", url: "" } // TODO BookFunnel link
       ]
     }
   ],

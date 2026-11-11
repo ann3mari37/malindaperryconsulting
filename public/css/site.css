@@ -476,3 +476,24 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1
   .start-steps li { grid-template-columns: 1fr; padding: 20px 18px; gap: 10px; }
   .step-num { width: 42px; height: 42px; font-size: 1.1rem; }
 }
+
+/* Round "New here?" button, floating bottom-right (inspired by Mel Robbins' site) */
+.new-round {
+  position: fixed; right: 26px; bottom: 26px; z-index: 45; width: 104px; height: 104px; border-radius: 50%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none;
+  background: var(--terracotta); color: var(--espresso); box-shadow: 0 18px 36px -14px rgba(22, 58, 60, .6);
+  border: 3px solid var(--paper); transform: rotate(-8deg);
+  transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), background .2s;
+  animation: pop-in .6s .8s cubic-bezier(.34, 1.56, .64, 1) both;
+}
+.new-round:hover { transform: rotate(0) scale(1.08); background: var(--espresso); color: var(--apricot); }
+.new-round-top { font: 600 .82rem/1 var(--sans); letter-spacing: .02em; opacity: .85; }
+.new-round-main { font: 700 1.45rem/1 var(--display); letter-spacing: -.03em; margin-top: 2px; }
+@keyframes pop-in { from { opacity: 0; transform: scale(.4) rotate(-30deg); } }
+@media (max-width: 860px) {
+  .new-round { width: 78px; height: 78px; right: 14px; bottom: 86px; border-width: 2px; }
+  .new-round-top { font-size: .7rem; }
+  .new-round-main { font-size: 1.1rem; }
+}
+.see-own-live { font: 600 1rem var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--lagoon) !important; margin: 34px 0 0; }
+.letter-lines { font-size: 1.2rem; line-height: 1.7; color: var(--espresso) !important; font-weight: 500; }
