@@ -497,3 +497,40 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1
 }
 .see-own-live { font: 600 1rem var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--lagoon) !important; margin: 34px 0 0; }
 .letter-lines { font-size: 1.2rem; line-height: 1.7; color: var(--espresso) !important; font-weight: 500; }
+
+/* =============================================================
+   Full-image hero (like Mel Robbins' site): MaLinda's photo fills
+   the right of the hero edge to edge, fading into cream behind the
+   headline. On phones the photo runs full width above the text.
+   ============================================================= */
+.hero { min-height: min(86vh, 800px); display: flex; align-items: center; padding: 64px 0 110px; }
+.hero > .wrap { width: 100%; }
+.hero-grid { grid-template-columns: 1fr; position: static; }
+.hero-copy { position: relative; z-index: 2; max-width: 620px; }
+.hero-photo {
+  position: absolute; top: 0; right: 0; bottom: 0; width: 62%; margin: 0; justify-self: auto;
+  animation: fade-in 1.2s ease both;
+}
+.hero-photo::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; border-radius: 0;
+  background:
+    linear-gradient(90deg, var(--cream) 0%, rgba(247, 241, 232, .9) 16%, rgba(247, 241, 232, 0) 52%),
+    linear-gradient(0deg, rgba(247, 241, 232, .55) 0%, rgba(247, 241, 232, 0) 30%);
+}
+.hero-photo img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; object-position: 50% 18%; border-radius: 0; box-shadow: none; }
+@keyframes fade-in { from { opacity: 0; } }
+
+@media (max-width: 860px) {
+  .hero { display: block; min-height: 0; padding: 0 0 64px; }
+  .hero-photo { position: relative; order: -1; width: calc(100% + 56px); margin: 0 -28px; height: min(62vh, 520px); }
+  .hero-photo::before { background: linear-gradient(0deg, var(--cream) 0%, rgba(247, 241, 232, .6) 18%, rgba(247, 241, 232, 0) 45%); }
+  .hero-copy { margin-top: -84px; max-width: none; }
+}
+@media (max-width: 560px) {
+  .hero-photo { width: calc(100% + 36px); margin: 0 -18px; }
+}
+/* Phones: sit low in the corner; lift above the action bar once it slides up */
+@media (max-width: 860px) {
+  .new-round { bottom: 16px; transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), background .2s, bottom .25s ease; }
+  body:has(.mobile-bar.show) .new-round { bottom: 86px; }
+}
