@@ -760,7 +760,18 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1
   .pl-buy .btn { grid-column: 1 / -1; text-align: center; }
 }
 .listing .listing-info h1 { font-size: clamp(2.8rem, 5vw, 4.2rem); }
-.listing .li-actions { margin-bottom: 0; }
+.hero-book.listing .li-actions { margin-bottom: 0; }
 .hero-book.listing.hero-lean .hero-grid { grid-template-columns: .9fr 1.1fr; gap: 48px; }
 @media (max-width: 860px) { .hero-book.listing.hero-lean .hero-grid { grid-template-columns: 1fr; gap: 24px; } }
 .li-desc { margin: -10px 0 24px; max-width: 34em; font-size: 1.05rem; line-height: 1.55; color: var(--muted); }
+
+/* Logo in the header */
+.brand-logo { display: block; height: 54px; width: auto; }
+@media (max-width: 860px) { .brand-logo { height: 46px; } }
+
+/* Make images hard to save: no dragging, no long-press menu on phones, no selecting. */
+img { -webkit-user-drag: none; user-drag: none; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
+/* Taller header so the script name in the logo reads */
+:root { --header-h: 88px; }
+.brand-logo { height: 72px; }
+@media (max-width: 860px) { :root { --header-h: 72px; } .brand-logo { height: 56px; } }

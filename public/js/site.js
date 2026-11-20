@@ -1,3 +1,8 @@
+// Make images hard to save: block the right-click menu and dragging on images.
+// This stops casual saving only; screenshots and browser tools still work.
+document.addEventListener("contextmenu", function (e) { if (e.target.closest && e.target.closest("img, picture, svg, figure, .bundle-art")) e.preventDefault(); });
+document.addEventListener("dragstart", function (e) { if (e.target.tagName === "IMG") e.preventDefault(); });
+
 /* MaLinda Perry Consulting — page behavior */
 (function () {
   "use strict";
