@@ -30,7 +30,7 @@ window.SITE = {
      BOOKS
      buy: a list of buttons. Today that is Payhip: checkout and
      file delivery. A payhip.com/b/... link opens
-     Payhip checkout right on the page.
+     Payhip checkout in a new tab.
      Later, add IngramSpark / Shopify links for print, e.g.
        { label: "Buy the paperback", url: "https://shop.../products/..." }
      The first link is the main (orange) button.

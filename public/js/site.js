@@ -73,32 +73,15 @@
     if (!live.length) return '<span class="soon">Available soon</span>';
     return live.map(function (l, i) {
       var cls = "btn " + (i === 0 ? "btn-primary" : "btn-ghost") + (big ? "" : " btn-sm");
-      var p = payhipCode(l.url);
-      if (p) {
-        // Payhip takes the payment in a checkout window on this page;
-        // Payhip emails the file after purchase.
-        loadPayhip();
-        return '<a class="' + cls + ' payhip-buy-button" href="' + esc(l.url) + '" data-product="' + esc(p) +
-          '" data-theme="none">' + esc(l.label) + "</a>";
-      }
-      return extLink(l.url, l.label, cls);
+      // Payhip checkout opens in a new tab so this site stays open behind it.
+      // Payhip emails the PDF after purchase.
+      var url = payhipCode(l.url) ? "https://payhip.com/buy?link=" + payhipCode(l.url) : l.url;
+      return extLink(url, l.label, cls);
     }).join("");
   }
   function payhipCode(url) {
     var m = /^https:\/\/payhip\.com\/b\/([A-Za-z0-9]+)\/?$/.exec(url || "");
     return m ? m[1] : "";
-  }
-  var payhipLoaded = false;
-  function loadPayhip() {
-    if (payhipLoaded) return;
-    payhipLoaded = true;
-    // Load after the buttons are on the page so Payhip finds them.
-    setTimeout(function () {
-      var s = document.createElement("script");
-      s.src = "https://payhip.com/payhip.js";
-      s.async = true;
-      document.body.appendChild(s);
-    }, 0);
   }
   var bookList = $("#bookList");
   if (bookList) {
@@ -121,8 +104,6 @@
   if (firstBook && firstBook.price) {
     document.querySelectorAll(".js-price").forEach(function (el) { el.textContent = firstBook.price; });
   }
-  // Hand-written Payhip buttons also need Payhip's checkout script.
-  if (document.querySelector(".payhip-buy-button")) loadPayhip();
 
   /* ---------- Events ---------- */
   var MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
