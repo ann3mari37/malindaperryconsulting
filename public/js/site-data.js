@@ -28,7 +28,9 @@ window.SITE = {
 
   /* -----------------------------------------------------------
      BOOKS
-     buy: a list of buttons. Today that's BookFunnel for ebooks.
+     buy: a list of buttons. Today that is Payhip (checkout) with
+     BookFunnel delivering the file. A payhip.com/b/... link opens
+     Payhip checkout right on the page.
      Later, add IngramSpark / Shopify links for print, e.g.
        { label: "Buy the paperback", url: "https://shop.../products/..." }
      The first link is the main (orange) button.
@@ -48,7 +50,9 @@ window.SITE = {
         "Grab your favorite beverage, find a comfortable spot, and let's go find your magic. See it. Own it. Live it."
       ],
       buy: [
-        { label: "Get the workbook", url: "" } // TODO BookFunnel link
+        // Paste the Payhip product link, e.g. "https://payhip.com/b/AbC12".
+        // Payhip is the checkout; BookFunnel delivers the book after purchase.
+        { label: "Get the workbook", url: "https://payhip.com/b/xB8tP" }
       ]
     }
   ],
