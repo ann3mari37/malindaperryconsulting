@@ -28,8 +28,8 @@ window.SITE = {
 
   /* -----------------------------------------------------------
      BOOKS
-     buy: a list of buttons. Today that is Payhip (checkout) with
-     BookFunnel delivering the file. A payhip.com/b/... link opens
+     buy: a list of buttons. Today that is Payhip: checkout and
+     file delivery. A payhip.com/b/... link opens
      Payhip checkout right on the page.
      Later, add IngramSpark / Shopify links for print, e.g.
        { label: "Buy the paperback", url: "https://shop.../products/..." }
@@ -51,7 +51,7 @@ window.SITE = {
       ],
       buy: [
         // Paste the Payhip product link, e.g. "https://payhip.com/b/AbC12".
-        // Payhip is the checkout; BookFunnel delivers the book after purchase.
+        // Payhip takes payment and emails the PDF (BookFunnel delivery needs its Mid List plan).
         { label: "Get the workbook", url: "https://payhip.com/b/xB8tP" }
       ]
     }

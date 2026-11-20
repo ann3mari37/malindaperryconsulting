@@ -76,7 +76,7 @@
       var p = payhipCode(l.url);
       if (p) {
         // Payhip takes the payment in a checkout window on this page;
-        // BookFunnel then emails the reader their download (set up in BookFunnel).
+        // Payhip emails the file after purchase.
         loadPayhip();
         return '<a class="' + cls + ' payhip-buy-button" href="' + esc(l.url) + '" data-product="' + esc(p) +
           '" data-theme="none">' + esc(l.label) + "</a>";
