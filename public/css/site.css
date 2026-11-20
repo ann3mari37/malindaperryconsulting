@@ -775,3 +775,6 @@ img { -webkit-user-drag: none; user-drag: none; -webkit-touch-callout: none; -we
 :root { --header-h: 88px; }
 .brand-logo { height: 72px; }
 @media (max-width: 860px) { :root { --header-h: 72px; } .brand-logo { height: 56px; } }
+
+/* Desktop: show everything at 80% scale, like the browser zoomed to 80%. Phones and tablets stay at 100%. */
+@media (min-width: 1100px) { html { zoom: .8; } }
