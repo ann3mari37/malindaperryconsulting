@@ -65,7 +65,8 @@
 
   /* ---------- Books ---------- */
   function coverHTML(b) {
-    if (b.cover) return '<img src="' + esc(b.cover) + '" alt="Cover of ' + esc(b.title) + '" loading="lazy">';
+    var bonus = b.bonus ? '<span class="cover-bonus">+ free workbook</span>' : "";
+    if (b.cover) return '<img src="' + esc(b.cover) + '" alt="Cover of ' + esc(b.title) + '" loading="lazy">' + bonus;
     return '<div class="cover-art" aria-hidden="true"><small>' + esc(S.name || "") + '</small><span class="cover-arch"></span><b>' + esc(b.title) + "</b></div>";
   }
   function buyButtons(b, big) {

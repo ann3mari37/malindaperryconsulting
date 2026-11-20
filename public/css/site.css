@@ -599,3 +599,68 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1
   .sales-page .brand-text { white-space: nowrap; }
 }
 @media (max-width: 420px) { .sales-page .brand-text { display: none; } }
+
+/* =============================================================
+   BUNDLE: book ($5) + companion workbook (free)
+   ============================================================= */
+.bundle-art { margin: 0; justify-self: center; width: min(100%, 440px); animation: rise 1s .15s cubic-bezier(.2, .7, .2, 1) both; }
+.bundle-link { display: block; position: relative; aspect-ratio: 1 / 1.08; color: inherit; text-decoration: none; }
+.bundle-link::before { content: ""; position: absolute; inset: 14% 4% 2% 10%; background: var(--apricot); border-radius: 50%; opacity: .5; }
+.ba-book, .ba-workbook { position: absolute; width: 62%; aspect-ratio: 1097 / 1638; border-radius: 3px 8px 8px 3px; box-shadow: 0 2px 0 rgba(22, 58, 60, .06), 0 26px 50px -18px rgba(22, 58, 60, .5); transition: transform .4s cubic-bezier(.2, .7, .2, 1); }
+.ba-book { left: 2%; top: 4%; z-index: 2; transform: rotate(-4deg); object-fit: cover; }
+.ba-workbook { right: 2%; top: 9%; z-index: 1; transform: rotate(6deg); }
+.bundle-link:hover .ba-book { transform: rotate(-6deg) translate(-8px, -6px); }
+.bundle-link:hover .ba-workbook { transform: rotate(9deg) translate(10px, -2px); }
+.ba-badge { position: absolute; z-index: 3; right: 0; bottom: 4%; width: 31%; aspect-ratio: 1; border-radius: 50%; background: var(--espresso); color: var(--cream); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; transform: rotate(-10deg); box-shadow: 0 12px 26px -10px rgba(22, 58, 60, .6); border: 4px solid var(--paper); container-type: inline-size; }
+.ba-badge small { font-size: 13cqw; font-weight: 600; opacity: .85; line-height: 1.1; }
+.ba-badge b { font-size: 17cqw; font-weight: 700; line-height: 1.05; letter-spacing: -.02em; }
+.ba-badge em { font: 600 30cqw/0.9 "Caveat", cursive; color: var(--terracotta); margin-top: 2cqw; }
+
+/* Workbook cover, drawn in HTML until there is a real image */
+.wb-cover { position: absolute; inset: 0; background: #FFFCF7; border-radius: inherit; overflow: hidden; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 11cqw 8cqw 8cqw; border-left: 3cqw solid var(--terracotta); color: #1b1b1b; }
+.wb-top { margin: 0; font-size: 5cqw; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--lagoon); }
+.wb-title { margin: 6cqw 0 0; font-size: 21cqw; font-weight: 700; line-height: .9; letter-spacing: -.05em; color: #161616; }
+.wb-title span { color: var(--terracotta-hi); }
+.wb-sub { margin: 5cqw 0 0; font-size: 6.2cqw; line-height: 1.25; font-weight: 600; color: var(--espresso); }
+.wb-lines { width: 100%; margin: auto 0 0; display: grid; gap: 6cqw; padding: 8cqw 4cqw 0; }
+.wb-lines i { display: block; height: 1px; background: #d9cdbd; }
+.wb-tag { margin: 8cqw 0 0; font-size: 5cqw; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--terracotta-hi); }
+.wb-by { margin: 3cqw 0 0; font-size: 6cqw; font-weight: 600; color: #161616; }
+
+/* $5 + Free strip */
+.bundle-math { display: inline-flex; align-items: stretch; gap: 10px; margin: 26px 0 0; padding: 8px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); }
+.bm-item { display: flex; flex-direction: column; justify-content: center; padding: 8px 14px; border-radius: calc(var(--radius) - 2px); }
+.bm-label { font-size: .82rem; font-weight: 600; color: var(--muted); }
+.bm-price { font-size: 1.6rem; font-weight: 700; line-height: 1.1; color: var(--espresso); letter-spacing: -.02em; }
+.bm-free { background: var(--apricot-soft); }
+.bm-free .bm-price { font: 600 2rem/1 "Caveat", cursive; color: var(--terracotta-hi); letter-spacing: 0; }
+.bm-op { align-self: center; font-size: 1.5rem; font-weight: 700; color: var(--terracotta-hi); }
+
+/* Book card on the homepage: "+ free workbook" ribbon on the cover */
+.book-cover { position: relative; }
+.cover-bonus { position: absolute; right: -10px; bottom: 14px; background: var(--espresso); color: var(--cream); font-size: .78rem; font-weight: 700; padding: 6px 10px; border-radius: 4px; transform: rotate(-4deg); box-shadow: 0 8px 18px -8px rgba(22, 58, 60, .6); }
+
+/* Sales page: what you get */
+.get-pair { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: stretch; margin-bottom: 14px; }
+.get-card { display: grid; grid-template-columns: 96px 1fr; gap: 20px; align-items: center; background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+.get-card img, .get-wb { width: 96px; aspect-ratio: 1097 / 1638; border-radius: 2px 5px 5px 2px; box-shadow: 0 14px 26px -12px rgba(22, 58, 60, .5); position: relative; }
+.get-card img { object-fit: cover; }
+.get-card h3 { font: 700 1.35rem/1.1 var(--display); margin: 4px 0 8px; color: var(--espresso); }
+.get-card p { margin: 0; color: var(--muted); }
+.get-tag { font-size: .85rem; font-weight: 700 !important; color: var(--lagoon) !important; }
+.get-tag-free { color: var(--terracotta-hi) !important; }
+.get-card-free { background: var(--apricot-soft); border-color: var(--apricot); }
+.get-plus { align-self: center; font-size: 2.2rem; font-weight: 700; color: var(--terracotta-hi); }
+.get-note { margin: 0 0 48px; font-weight: 600; color: var(--espresso); }
+
+@media (max-width: 860px) {
+  .bundle-art { width: min(86%, 340px); order: -1; }
+  .hero-book .hero-grid > .bundle-art { order: -1; }
+  .bundle-math { display: flex; }
+  .bm-item { flex: 1; }
+  .get-pair { grid-template-columns: 1fr; gap: 8px; }
+  .get-plus { justify-self: center; line-height: 1; }
+  .get-card { grid-template-columns: 76px 1fr; }
+  .get-card img, .get-wb { width: 76px; }
+}
+.ba-workbook, .get-wb { container-type: inline-size; }

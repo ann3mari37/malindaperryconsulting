@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=23">
+  <link rel="stylesheet" href="css/site.css?v=25">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -46,18 +46,34 @@
     <section class="hero hero-book">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="kicker">The new workbook from MaLinda Jo Perry</p>
+          <p class="kicker">The new book from MaLinda Jo Perry</p>
           <h1>Get unstuck. <em>Grow forward.</em></h1>
-          <p class="lede">Your personal journey from stuck to possibility. See who you are, own what makes you extraordinary, and live it.</p>
+          <p class="lede">Read the book, then make it yours with the companion workbook. You get both, together, for one small price.</p>
+          <div class="bundle-math" aria-label="What you get">
+            <div class="bm-item"><span class="bm-label">The book</span><span class="bm-price js-price">$5</span></div>
+            <span class="bm-op" aria-hidden="true">+</span>
+            <div class="bm-item bm-free"><span class="bm-label">The workbook</span><span class="bm-price">Free</span></div>
+          </div>
           <div class="hero-actions">
-            <a href="https://payhip.com/buy?link=xB8tP" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Get the workbook &middot; <span class="js-price">$5</span></a>
+            <a href="https://payhip.com/buy?link=xB8tP" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Get both for <span class="js-price">$5</span></a>
             <a href="/unstuck" class="btn btn-outline-light btn-lg">Take a look inside</a>
           </div>
-          <p class="powered">Instant PDF download &middot; Work through it at your own pace</p>
+          <p class="powered">Both PDFs arrive together, right after checkout</p>
         </div>
-        <figure class="hero-cover">
-          <a href="/unstuck" aria-label="About the UNSTUCK workbook">
-            <img src="images/books/unstuck.jpg" alt="UNSTUCK: Grow Forward. Go Find Your Magic! by MaLinda Jo Perry" width="1097" height="1638">
+        <figure class="bundle-art" aria-label="The UNSTUCK book and its companion workbook">
+          <a href="/unstuck" class="bundle-link" aria-label="About UNSTUCK">
+            <div class="ba-workbook" aria-hidden="true">
+              <div class="wb-cover">
+                <p class="wb-top">A companion workbook</p>
+                <p class="wb-title">UN<span>STUCK</span></p>
+                <p class="wb-sub">Your Personal Journey From Stuck to Possibility</p>
+                <div class="wb-lines"><i></i><i></i><i></i><i></i></div>
+                <p class="wb-tag">See it. Own it. Live it.</p>
+                <p class="wb-by">MaLinda Perry</p>
+              </div>
+            </div>
+            <img class="ba-book" src="images/books/unstuck.jpg" alt="UNSTUCK: Grow Forward. Go Find Your Magic! by MaLinda Jo Perry" width="1097" height="1638">
+            <span class="ba-badge"><small>Plus the</small><b>workbook</b><em>free</em></span>
           </a>
         </figure>
       </div>
@@ -358,7 +374,7 @@
     </div>
   </template>
 
-  <script src="js/site-data.js?v=6"></script>
-  <script src="js/site.js?v=6"></script>
+  <script src="js/site-data.js?v=7"></script>
+  <script src="js/site.js?v=7"></script>
 </body>
 </html>

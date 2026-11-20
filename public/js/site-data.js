@@ -43,7 +43,8 @@ window.SITE = {
       subtitle: "Your Personal Journey From Stuck to Possibility",
       cover: "images/books/unstuck.jpg",
       price: "$5", // shown next to buy buttons; keep in step with Payhip
-      format: "A companion workbook",
+      format: "Book + free companion workbook",
+      bonus: "The companion workbook", // shown as "+ free" next to the cover
       blurb: "This isn't another assignment for your overflowing to-do list. This is time for YOU: to see who you are, own what makes you extraordinary, and live it.",
       details: [
         "Time to think about who you are, what makes you extraordinary, and what might be possible if you stopped carrying around some of those rocks you've collected along the way.",
@@ -53,7 +54,7 @@ window.SITE = {
       buy: [
         // Paste the Payhip product link, e.g. "https://payhip.com/b/AbC12".
         // Payhip takes payment and emails the PDF (BookFunnel delivery needs its Mid List plan).
-        { label: "Get the workbook", url: "https://payhip.com/b/xB8tP" }
+        { label: "Get both for $5", url: "https://payhip.com/b/xB8tP" }
       ]
     }
   ],
