@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=25">
+  <link rel="stylesheet" href="css/site.css?v=34">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -43,39 +43,31 @@
   <main id="main">
 
     <!-- ============ HERO ============ -->
-    <section class="hero hero-book">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="kicker">The new book from MaLinda Jo Perry</p>
-          <h1>Get unstuck. <em>Grow forward.</em></h1>
-          <p class="lede">Read the book, then make it yours with the companion workbook. You get both, together, for one small price.</p>
-          <div class="bundle-math" aria-label="What you get">
-            <div class="bm-item"><span class="bm-label">The book</span><span class="bm-price js-price">$5</span></div>
-            <span class="bm-op" aria-hidden="true">+</span>
-            <div class="bm-item bm-free"><span class="bm-label">The workbook</span><span class="bm-price">Free</span></div>
-          </div>
-          <div class="hero-actions">
-            <a href="https://payhip.com/buy?link=xB8tP" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Get both for <span class="js-price">$5</span></a>
-            <a href="/unstuck" class="btn btn-outline-light btn-lg">Take a look inside</a>
-          </div>
-          <p class="powered">Both PDFs arrive together, right after checkout</p>
-        </div>
+    <section class="hero listing hero-lean" aria-labelledby="listing-title">
+      <div class="wrap listing-grid">
         <figure class="bundle-art" aria-label="The UNSTUCK book and its companion workbook">
           <a href="/unstuck" class="bundle-link" aria-label="About UNSTUCK">
-            <div class="ba-workbook" aria-hidden="true">
-              <div class="wb-cover">
-                <p class="wb-top">A companion workbook</p>
-                <p class="wb-title">UN<span>STUCK</span></p>
-                <p class="wb-sub">Your Personal Journey From Stuck to Possibility</p>
-                <div class="wb-lines"><i></i><i></i><i></i><i></i></div>
-                <p class="wb-tag">See it. Own it. Live it.</p>
-                <p class="wb-by">MaLinda Perry</p>
-              </div>
-            </div>
+            <img class="ba-workbook" src="images/books/unstuck-workbook.jpg" alt="UNSTUCK Companion Workbook by MaLinda Jo Perry" width="855" height="1110">
             <img class="ba-book" src="images/books/unstuck.jpg" alt="UNSTUCK: Grow Forward. Go Find Your Magic! by MaLinda Jo Perry" width="1097" height="1638">
             <span class="ba-badge"><small>Plus the</small><b>workbook</b><em>free</em></span>
           </a>
         </figure>
+        <div class="listing-info">
+          <p class="li-type">New release &middot; eBook</p>
+          <h1 id="listing-title">UNSTUCK</h1>
+          <p class="li-sub">Grow Forward. Go Find Your Magic!</p>
+          <p class="li-by">by <a href="#about">MaLinda Jo Perry</a></p>
+          <div class="li-price"><span class="js-price">$4.99</span><span class="li-incl">Includes the companion workbook</span></div>
+          <div class="li-actions">
+            <a href="https://payhip.com/buy?link=xB8tP" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Buy now</a>
+            <a href="/unstuck" class="btn btn-outline-light btn-lg">Look inside</a>
+          </div>
+          <dl class="li-details">
+            <div><dt>Format</dt><dd>PDF book + PDF workbook</dd></div>
+            <div><dt>Delivery</dt><dd>Instant download by email</dd></div>
+            <div><dt>Author</dt><dd>Gallup Certified Strengths Coach</dd></div>
+          </dl>
+        </div>
       </div>
     </section>
 
@@ -374,7 +366,7 @@
     </div>
   </template>
 
-  <script src="js/site-data.js?v=7"></script>
+  <script src="js/site-data.js?v=8"></script>
   <script src="js/site.js?v=7"></script>
 </body>
 </html>

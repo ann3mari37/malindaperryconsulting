@@ -42,7 +42,7 @@ window.SITE = {
       title: "UNSTUCK",
       subtitle: "Your Personal Journey From Stuck to Possibility",
       cover: "images/books/unstuck.jpg",
-      price: "$5", // shown next to buy buttons; keep in step with Payhip
+      price: "$4.99", // shown next to buy buttons; keep in step with Payhip
       format: "Book + free companion workbook",
       bonus: "The companion workbook", // shown as "+ free" next to the cover
       blurb: "This isn't another assignment for your overflowing to-do list. This is time for YOU: to see who you are, own what makes you extraordinary, and live it.",
@@ -54,7 +54,7 @@ window.SITE = {
       buy: [
         // Paste the Payhip product link, e.g. "https://payhip.com/b/AbC12".
         // Payhip takes payment and emails the PDF (BookFunnel delivery needs its Mid List plan).
-        { label: "Get both for $5", url: "https://payhip.com/b/xB8tP" }
+        { label: "Get both for $4.99", url: "https://payhip.com/b/xB8tP" }
       ]
     }
   ],
