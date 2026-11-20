@@ -107,7 +107,7 @@
       return '<article class="book reveal">' +
         '<div class="book-cover">' + coverHTML(b) + "</div>" +
         "<div>" +
-          (b.format ? '<p class="book-meta">' + esc(b.format) + "</p>" : "") +
+          (b.format ? '<p class="book-meta">' + esc(b.format) + (b.price ? " &middot; " + esc(b.price) : "") + "</p>" : "") +
           "<h3>" + esc(b.title) + "</h3>" +
           (b.subtitle ? '<p class="book-sub">' + esc(b.subtitle) + "</p>" : "") +
           "<p>" + esc(b.blurb) + "</p>" +
@@ -116,6 +116,13 @@
         "</div></article>";
     }).join("") : '<div class="empty"><h3>New books are on the way</h3><p>Leave your email in the contact form and I\'ll let you know when they\'re out.</p></div>';
   }
+  // Price shown on hand-written buy buttons (hero, /unstuck page).
+  var firstBook = (S.books || [])[0];
+  if (firstBook && firstBook.price) {
+    document.querySelectorAll(".js-price").forEach(function (el) { el.textContent = firstBook.price; });
+  }
+  // Hand-written Payhip buttons also need Payhip's checkout script.
+  if (document.querySelector(".payhip-buy-button")) loadPayhip();
 
   /* ---------- Events ---------- */
   var MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];

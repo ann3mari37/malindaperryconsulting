@@ -41,7 +41,8 @@ window.SITE = {
     {
       title: "UNSTUCK",
       subtitle: "Your Personal Journey From Stuck to Possibility",
-      cover: "",   // TODO: add the real cover, e.g. "images/books/unstuck.jpg"
+      cover: "images/books/unstuck.jpg",
+      price: "$5", // shown next to buy buttons; keep in step with Payhip
       format: "A companion workbook",
       blurb: "This isn't another assignment for your overflowing to-do list. This is time for YOU: to see who you are, own what makes you extraordinary, and live it.",
       details: [
