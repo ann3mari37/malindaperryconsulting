@@ -2,7 +2,8 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  X-Frame-Options: DENY
+  # Only this site and jamry.us (the web design showcase) may show these pages in a frame
+  Content-Security-Policy: frame-ancestors 'self' https://jamry.us
 
 /js/site-data.js
   Cache-Control: public, max-age=300
